@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-About this site
+About me
 
-```{r}
-1 + 1
-```
+Alex Reed is a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara. Her current interests lie in sustainable food systems, addressing climate change, and reducing carbon footprints. Alex completed her undergraduate studies at UC Santa Barbara in 2017, graduating with a Bachelor of Science in Environmental Studies. As an undergraduate student, Alex led reforestation and sustainable agriculture projects in South America for a nonprofit organization. After graduating, Alex worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company, where she evaluated and identified environmental impacts as well as recommended and implemented solutions for clients in the private and public sectors. During her time working as an environmental consultant, she observed the disproportionate environmental impacts in marginalized communities and the need for reproducible data science and visualization skills to develop solutions to environmental issues. Her goal is to utilize data science tools to derive data-driven solutions for complex environmental problems and effectively communicate the information so that it is accessible and enacts change.
