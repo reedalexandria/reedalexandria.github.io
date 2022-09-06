@@ -6,11 +6,14 @@ about:
   image-shape: rounded
   image-width: 12em
   links: 
-    - text: LinkedIn
+    - icon: linkedin
+      text: LinkedIn
       href: https://www.linkedin.com/in/alexandria-reed-579132128/
-    - text: GitHub
+    - icon: github
+      text: GitHub
       href: https://github.com/reedalexandria
-    - text: Email
+    - icon: envelope
+      text: Email
       href: mailto:reed.alexandria@outlook.com
 ---
 
