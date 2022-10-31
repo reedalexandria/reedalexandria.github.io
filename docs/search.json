@@ -1,16 +1,37 @@
 [
   {
+    "objectID": "posts/2022-10-24-class-example/index.html",
+    "href": "posts/2022-10-24-class-example/index.html",
+    "title": "blog post title",
+    "section": "",
+    "text": "More text.1\nHere I am going to cite my own blog post (Reed 2022).\n\n\n\n\n\nReferences\n\nReed, Alex. 2022. “Blog Post Title.” October 24, 2022. https://reedalexandria.github.io/posts/2022-10-24-class-example.\n\nFootnotes\n\n\nthis is a footnote↩︎\n\nCitationBibTeX citation:@online{reed2022,\n  author = {Alex Reed},\n  title = {Blog Post Title},\n  date = {2022-10-24},\n  url = {https://reedalexandria.github.io/posts/2022-10-24-class-example},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nAlex Reed. 2022. “Blog Post Title.” October 24, 2022. https://reedalexandria.github.io/posts/2022-10-24-class-example."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Alexandria Reed",
     "section": "",
-    "text": "About me\nI’m Alexandria Reed. I’m a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara.\n\n\nEducation\nMaster of Environmental Data Science, (Expected June 2023) | Bren School of Environmental Science & Management University of California, Santa Barbara (UCSB)\nBachelor of Science in Environmental Studies, (June 2017)| UCSB, Santa Barbara, CA\n\n\nExperience\nEnvironmental Specialist (2018-present) | Citadel EHS, Glendale, CA"
+    "text": "Education\nMaster of Environmental Data Science, (Expected June 2023) | Bren School of Environmental Science & Management University of California, Santa Barbara (UCSB)\nBachelor of Science in Environmental Studies, (June 2017)| UCSB, Santa Barbara, CA\n\n\nExperience\nEnvironmental Specialist (2018-present) | Citadel EHS, Glendale, CA"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Alex Reed is a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara. Her current interests lie in sustainable food systems, addressing climate change, and reducing carbon footprints. Alex completed her undergraduate studies at UC Santa Barbara in 2017, graduating with a Bachelor of Science in Environmental Studies. As an undergraduate student, Alex led reforestation and sustainable agriculture projects in South America for a nonprofit organization. After graduating, Alex worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company, where she evaluated and identified environmental impacts as well as recommended and implemented solutions for clients in the private and public sectors. During her time working as an environmental consultant, she observed the disproportionate environmental impacts in marginalized communities and the need for reproducible data science and visualization skills to develop solutions to environmental issues. Her goal is to utilize data science tools to derive data-driven solutions for complex environmental problems and effectively communicate the information so that it is accessible and enacts change."
+    "text": "hi\n\nAlex Reed is a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara. Her current interests lie in sustainable food systems, addressing climate change, and reducing carbon footprints. Alex completed her undergraduate studies at UC Santa Barbara in 2017, graduating with a Bachelor of Science in Environmental Studies. As an undergraduate student, Alex led reforestation and sustainable agriculture projects in South America for a nonprofit organization. After graduating, Alex worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company, where she evaluated and identified environmental impacts as well as recommended and implemented solutions for clients in the private and public sectors. During her time working as an environmental consultant, she observed the disproportionate environmental impacts in marginalized communities and the need for reproducible data science and visualization skills to develop solutions to environmental issues. Her goal is to utilize data science tools to derive data-driven solutions for complex environmental problems and effectively communicate the information so that it is accessible and enacts change."
+  },
+  {
+    "objectID": "blog_posts.html",
+    "href": "blog_posts.html",
+    "title": "posts",
+    "section": "",
+    "text": "MEDS\n\n\ntest\n\n\nR\n\n\nPython\n\n\n\nthis is a description\n\n\n\nAlex Reed\n\n\nOct 24, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "this is a black h1 element\n\n\nthis is my paragraph\n\n\nthis is my black paragraph"
   }
 ]

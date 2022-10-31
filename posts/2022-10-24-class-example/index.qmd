@@ -1,0 +1,24 @@
+---
+title: "blog post title"
+description: "this is a description"
+author:
+  - name: Alex Reed
+    url: https://reedalexandria.github.io
+    affiliation: MEDS
+    affilitation-url: https://ucsb-meds.github.io
+date: 2022-10-24
+categories: [MEDS, test, R, Python]
+citation: 
+  url: https://reedalexandria.github.io/posts/2022-10-24-class-example
+bibliography: references.bib
+image: python.jpeg
+draft: false
+---
+
+Hello, this is my class example blog post.
+
+More text.[^1]
+
+[^1]: this is a footnote
+
+Here I am going to cite my own blog post [@reed2022].

@@ -1,0 +1,38 @@
+/*-- scss:defaults --*/
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+// Colors 
+$sage-green: #78827b;
+$grey-green:#7f9992;
+$sage: #c9d6ce;
+
+// Base Document Colors
+$navbar-bg: $sage-green;
+$body-bg: $sage;
+$link-color: $grey-green;
+$fontcolor: $grey-green;
+
+// Font size: 
+
+//$my-font-size = 
+
+/*-- scss:rules --*/
+
+h1, h3 {
+  letter-spacing: 4px;
+  font-weight: 700;
+  color: $sage-green;
+}
+
+.title {
+  color: black;
+}
+
+.custom-subtitle {
+  font-size: 22px;
+  font-style: italic;
+  color: $grey-green;
+}
+

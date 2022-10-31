@@ -9,11 +9,15 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-
+      - resources.qmd
+      - href: blog_posts.qmd
+        text: Blog post
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      - mystyles.scss
+    #css: styles.css
+    mainfont: Montserrat
     toc: true
 
 editor: visual
