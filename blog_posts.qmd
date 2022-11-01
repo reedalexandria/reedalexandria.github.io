@@ -1,5 +1,5 @@
 ---
-title: "posts"
+title: "posts - work in progress"
 listing: 
   type: grid
   contents: posts

@@ -1,10 +1,11 @@
 ---
 title: "Alexandria Reed"
+subtitle: Environmental Data Scientist
 image: image/Headshot_2.jpg
 about: 
   template: trestles
   image-shape: rounded
-  image-width: 12em
+  image-width: 14em
   links: 
     - icon: linkedin
       text: LinkedIn
