@@ -13,7 +13,6 @@ website:
         text: Resume
       - href: blog_posts.qmd
         text: Blog Posts
-        
   page-footer: 
     background: "#124559"
     left: "Copyright 2022, Alexandria Reed"
