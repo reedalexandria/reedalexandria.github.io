@@ -1,9 +1,9 @@
 ---
 title: "Alexandria Reed"
-image: image/Headshot_2.JPG
+image: image/Headshot_2.jpg
 about: 
   template: trestles
-  image-shape: round
+  image-shape: rounded
   image-width: 12em
   links: 
     - icon: linkedin
@@ -19,14 +19,6 @@ about:
 
 ### Welcome!
 
-I'm Alexandria Reed. I'm a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara.
+I'm Alexandria Reed. I'm an Environmental Specialist with interests in programming, data science, data visualization, and science communication. I am currently a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara.
 
-### Education
-
-**Master of Environmental Data Science**, (Expected June 2023) \| Bren School of Environmental Science & Management University of California, Santa Barbara (UCSB)
-
-**Bachelor of Science in Environmental Studies**, (June 2017)\| UCSB, Santa Barbara, CA
-
-### Experience
-
-**Environmental Specialist** (2018-present) \| Citadel EHS, Glendale, CA
+### 

@@ -9,9 +9,10 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - resources.qmd
+      - href: resume/resume.pdf
+        text: Resume
       - href: blog_posts.qmd
-        text: Blog post
+        text: Blog Posts
 format:
   html:
     theme: 

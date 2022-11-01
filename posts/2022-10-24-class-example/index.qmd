@@ -12,7 +12,7 @@ citation:
   url: https://reedalexandria.github.io/posts/2022-10-24-class-example
 bibliography: references.bib
 image: python.jpeg
-draft: false
+draft: true
 ---
 
 Hello, this is my class example blog post.

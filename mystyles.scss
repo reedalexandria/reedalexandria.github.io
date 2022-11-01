@@ -4,15 +4,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 // Colors 
-$sage-green: #78827b;
-$grey-green:#7f9992;
-$sage: #c9d6ce;
+$indigo: #01161e;
+$dark_blue:#124559;
+$blue: #598392;
+$green: #aec3b0;
+$light_green: #cfdbd5;
 
 // Base Document Colors
-$navbar-bg: $sage-green;
-$body-bg: $sage;
-$link-color: $grey-green;
-$fontcolor: $grey-green;
+$navbar-bg: $dark_blue;
+$body-bg: $light_green;
+$link-color: $indigo;
+$fontcolor: $indigo;
 
 // Font size: 
 
@@ -23,16 +25,16 @@ $fontcolor: $grey-green;
 h1, h3 {
   letter-spacing: 4px;
   font-weight: 700;
-  color: $sage-green;
+  color: $indigo;
 }
 
 .title {
-  color: black;
+  color: $dark_blue;
 }
 
 .custom-subtitle {
   font-size: 22px;
   font-style: italic;
-  color: $grey-green;
+  color: $indigo;
 }
 
