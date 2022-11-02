@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Alexandria Reed",
     "section": "",
-    "text": "I’m Alexandria Reed. I’m an Environmental Specialist with interests in programming, data science, data visualization, and science communication. I am currently a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara."
+    "text": "Education\nGraduation Cap Master of Environmental Data Science | Expected 2023 |\n\nBren School of Environmental Science & Management - University of California, Santa Barbara (UCSB)\n\n\n\nGraduation Cap Bachelor of Science in Environmental Studies | 2017 | UCSB\n\n\nExperience\nBriefcase Environmental Specialist | 2018-present | Citadel EHS"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I’m a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara. My current interests lie in sustainable food systems, addressing climate change, and reducing carbon footprints. I completed my undergraduate studies at UC Santa Barbara in 2017, graduating with a Bachelor of Science in Environmental Studies. As an undergraduate student, I led reforestation and sustainable agriculture projects in South America for a nonprofit organization. After graduating, I worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company, where I evaluated and identified environmental impacts as well as recommended and implemented solutions for clients in the private and public sectors. During my time working as an environmental consultant, I observed the disproportionate environmental impacts in marginalized communities and the need for reproducible data science and visualization skills to develop solutions to environmental issues. My goal is to utilize data science tools to derive data-driven solutions for complex environmental problems and effectively communicate the information so that it is accessible and enacts change.\n\nEducation\n\n\nGraduation Cap Master of Environmental Data Science | Expected 2023 | Bren School of Environmental Science & Management - University of California, Santa Barbara (UCSB)\n\n\n\nGraduation Cap Bachelor of Science in Environmental Studies | 2017 | UCSB\n\nExperience\n\nBriefcase Environmental Specialist | 2018-present | Citadel EHS"
+    "text": "About MeTravel\n\n\nI’m a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara. My current interests lie in sustainable food systems, addressing climate change, and reducing carbon footprints. I completed my undergraduate studies at UC Santa Barbara in 2017, graduating with a Bachelor of Science in Environmental Studies. As an undergraduate student, I led reforestation and sustainable agriculture projects in South America for a nonprofit organization. After graduating, I worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company, where I evaluated and identified environmental impacts as well as recommended and implemented solutions for clients in the private and public sectors. During my time working as an environmental consultant, I observed the disproportionate environmental impacts in marginalized communities and the need for reproducible data science and visualization skills to develop solutions to environmental issues. My goal is to utilize data science tools to derive data-driven solutions for complex environmental problems and effectively communicate the information so that it is accessible and enacts change.\n\n\nCheck out the places I have traveled to. (Interactive map coming soon)"
   },
   {
     "objectID": "blog_posts.html",
@@ -19,5 +19,19 @@
     "title": "posts - work in progress",
     "section": "",
     "text": "No matching items"
+  },
+  {
+    "objectID": "about.html#hobbies",
+    "href": "about.html#hobbies",
+    "title": "About",
+    "section": "Hobbies",
+    "text": "Hobbies\n\nHiking, biking, swimming, & spending time outside\nDigital illustration & graphic design\nReading mystery/thriller novels\nCooking & baking"
+  },
+  {
+    "objectID": "about.html#homes",
+    "href": "about.html#homes",
+    "title": "About",
+    "section": "Homes",
+    "text": "Homes\nI grew up in the state of Iowa, but I’ve moved around a lot in my adult life! Check out all the places I’ve lived:\n\n\n\nMap made using package mapview and data from: https://simplemaps.com/data/us-cities :::"
   }
 ]
