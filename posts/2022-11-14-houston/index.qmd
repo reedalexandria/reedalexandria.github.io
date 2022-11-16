@@ -1,6 +1,6 @@
 ---
-title: "Houston Power Crisis Analysis (2021)"
-description: "Analyzing remotely sensed data to determine the number of residents affected by the power outages cause by 2021 storms."
+title: "Houston Power Crisis Analysis"
+description: "Analyzing remotely sensed data to determine the number of residents affected by the power outages caused by storms in February 2021."
 author: 
 - name: Alex Reed
   url: {}

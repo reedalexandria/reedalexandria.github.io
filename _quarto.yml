@@ -5,7 +5,6 @@ project:
 website:
   title: "Alexandria Reed"
   navbar:
-    title: false
     logo: image/AR-1.png
     left:
       - href: index.qmd
@@ -15,8 +14,6 @@ website:
         text: Resume
       - href: blog_posts.qmd
         text: Blog Posts
-    collapse-below: sm
-    search: true
   page-footer: 
     background: "#124559"
     left: "Copyright 2022, Alexandria Reed"
