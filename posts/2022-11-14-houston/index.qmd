@@ -1,0 +1,264 @@
+---
+title: "Houston Power Crisis Analysis (2021)"
+description: "Analyzing remotely sensed data to determine the number of residents affected by the power outages cause by 2021 storms."
+author: 
+- name: Alex Reed
+  url: {}
+date: 2022-11-14
+categories: [MEDS, R, Remote Sensing, Spatial Analysis]
+image: census_income.png
+draft: false
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+base_url: https://reedalexandria.github.io
+---
+
+## Purpose
+
+The purpose of the analysis is to examine the effects of the February 2021 winter storms in Texas which caused blackouts. The analysis examines the extent of the blackout over Houston using data from the Visible Infrared Imaging Radiometer Suite ([VIIRS](https://www.jpss.noaa.gov/viirs.html)) instrument on the Suomi NPP satellite mission.
+
+## Load Libraries
+
+```{r,warning=FALSE, message=FALSE, results='hide'}
+library(terra)
+library(raster)
+library(tidyverse)
+library(tmap)
+library(stars)
+```
+
+## Read in the Data
+
+#### Night Lights Data
+
+```{r,warning=FALSE, message=FALSE, results='hide'}
+#read in night lights tiles
+VNP_28 <- rast("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/VNP46A1/VNP46A1.A2021038.h08v05.001.2021039064328.tif") |> st_as_stars()
+VNP_29 <- rast("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/VNP46A1/VNP46A1.A2021038.h08v06.001.2021039064329.tif") |> st_as_stars()
+VNP_06 <- rast("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/VNP46A1/VNP46A1.A2021047.h08v05.001.2021048091106.tif") |> st_as_stars()
+VNP_05 <- rast("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/VNP46A1/VNP46A1.A2021047.h08v06.001.2021048091105.tif") |> st_as_stars()
+
+#combine tiles for each date
+feb_7 <- st_mosaic(VNP_28, VNP_29)
+feb_16 <- st_mosaic(VNP_06, VNP_05)
+```
+
+#### Highways Data
+
+```{r,warning=FALSE, message=FALSE, results='hide'}
+#load highways dataset and reproject
+query <- "SELECT * FROM gis_osm_roads_free_1 WHERE fclass='motorway'"
+highways <- st_read("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/gis_osm_roads_free_1.gpkg", 
+                    query = query, 
+                    quiet = TRUE)
+#reproject
+highways <- highways |>
+  st_transform(3083)
+```
+
+#### Buildings Data
+
+```{r, warning=FALSE, message=FALSE, results='hide'}
+#load buildings dataset and reproject
+query <- "SELECT *
+FROM gis_osm_buildings_a_free_1
+WHERE (type IS NULL AND name IS NULL)
+OR type in ('residential', 'apartments', 'house', 'static_caravan', 'detached')"
+buildings <- st_read("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/gis_osm_buildings_a_free_1.gpkg", 
+                     query = query, 
+                     quiet = TRUE)
+#reproject
+buildings <- buildings |>
+  st_transform(3083)
+```
+
+#### Census Data
+
+```{r, warning=FALSE, message=FALSE, results='hide'}
+geoms <- st_read("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/ACS_2019_5YR_TRACT_48_TEXAS.gdb",
+                     layer = "ACS_2019_5YR_TRACT_48_TEXAS") 
+
+#load income data and update column names
+income <- st_read("/Users/alexreed/Documents/MEDS/Courses/EDS_223/Assignments/data/assignment3/ACS_2019_5YR_TRACT_48_TEXAS.gdb",
+                      layer = "X19_INCOME") |>
+  dplyr::select(GEOID, B19013e1) |>
+  rename(GEOID_Data = GEOID,
+         median_income = B19013e1) 
+```
+
+## Wrangle the data for visualizations
+
+### Create a blackout mask and vectorize
+
+Find the change in night lights intensity caused by the storm. Assuming that any location that experienced a drop of more than 200 nW cm^-2^sr^-1^ experienced a blackout. Assign `NA` to all locations that experienced a drop of *less* than 200 nW cm^-2^sr^-1^. Vectorize the mask.
+
+```{r, warning=FALSE, message=FALSE, results='hide'}
+#finding the change in night lights intensity and locations that experienced a drop of more than 200
+blackout_mask <- (feb_7 - feb_16) > 200
+
+# Assign NA to values with a difference of less than 200 
+blackout_mask[blackout_mask == FALSE] <- NA
+
+#vectorize blackout mask
+bm_vector <- st_as_sf(blackout_mask)
+
+#fix invalid geometries
+bm_vector <- st_make_valid(bm_vector)
+```
+
+### Crop the vectorized map to our region of interest (Houston)
+
+```{r, warning=FALSE, message=FALSE, results='hide'}
+#define roi and turn into a polygon
+roi <- st_polygon(list(rbind(c(-96.5, 29),
+                             c(-96.5, 30.5),
+                             c(-94.5, 30.5),
+                             c(-94.5, 29),
+                             c(-96.5, 29)))) 
+
+#convert to sf and assign crs
+roi <- st_sfc(roi) |>
+  st_set_crs(4326) #WGS84 has a unique reference code (EPSG 4326)
+
+#crop blackout mask to roi
+intersects <- st_intersects(bm_vector, roi, sparse = FALSE)
+bm_cropped <- bm_vector[intersects,]
+
+#reproject to EPSG 3083
+bm_cropped <- bm_cropped |>
+  st_transform(3083)
+```
+
+### Exclude highways from blackout mask
+
+To minimize falsely identifying areas with reduced traffic as areas without power, we will ignore areas near highways. Find areas that experienced blackouts that are further than 200m from a highway.
+
+```{r, warning=FALSE, message=FALSE, results='hide'}
+#identify areas within 200m of all highways
+highway_buffer  <- st_buffer(highways, dist =  200)
+highway_buffer <- st_union(highway_buffer)
+
+#identify areas beyond 200m of highways. st_difference includes houses within and touching the boundary. I decided to use st_difference instead of st_disjoint because I think the houses touching the buffer should be included
+beyond_buffer2 <- st_difference(bm_cropped, highway_buffer)
+```
+
+### Find homes impacted by blackouts
+
+```{r, warning=FALSE, message=FALSE, results='hide'}
+#filter to homes within blackout area
+buildings_blackout <- buildings[beyond_buffer2, op = st_intersects]
+impacted_homes <- nrow(buildings_blackout)
+```
+
+```{r, echo=FALSE}
+print(paste("There were", impacted_homes, "homes within blackout areas."))
+```
+
+### Determine which census tracts experienced blackouts
+
+```{r, warning=FALSE, message=FALSE, results='hide'}
+#join income data to the census tract geometries and crop to roi
+census_income <- left_join(geoms, income) |>
+  st_transform(3083) 
+
+roi <- roi |>
+  st_transform(3083)
+
+census_income_cropped <- census_income[roi, op = st_intersects]
+
+# census tracts with blackouts
+census_blackout <- census_income_cropped[buildings_blackout,] |>
+  mutate(blackout = "yes")
+
+#census_income_cropped combined with census_blackout
+combined <- full_join(as.data.frame(census_income_cropped), as.data.frame(census_blackout))
+combined$blackout[is.na(combined$blackout)] <- "no" 
+
+census_noblackout_only <- st_as_sf(combined[!grepl("yes",combined$blackout),])
+```
+
+## Visualizations
+
+### Create a map of median income by census tract
+
+```{r}
+tmap_mode("view")
+
+#Create a map of median income by census tract, designating which tracts had blackouts
+tm_shape(census_income_cropped) + 
+  tm_polygons("median_income", 
+          title = "Median Income ($)",
+          palette = "viridis") +
+  tm_shape(census_blackout) +
+  tm_dots() +
+  tm_layout(title = "Median income by census tract")
+
+#tmap_mode("plot") to get out of interactive version
+tmap_mode("plot")
+
+#census tracts with blackouts
+census_blackout_map <-  tm_shape(census_blackout) + 
+  tm_fill("median_income", 
+          title = "Median Income ($)",
+          palette = "viridis") +
+  tm_borders() +
+  tm_layout(title = "Median income for census tracts that had blackouts")
+
+#census tracts with no blackouts   
+census_noblackout_only_map <-  tm_shape(census_noblackout_only) + 
+  tm_fill("median_income", 
+          title = "Median Income ($)",
+          palette = "viridis") +
+  tm_borders() +
+  tm_layout(title = "Median income for census tracts that did not have blackouts")
+  
+tmap_arrange(census_blackout_map, census_noblackout_only_map)
+```
+
+```{r, include =FALSE}
+census_income_cropped_map <-  tm_shape(census_income_cropped) + 
+  tm_polygons("median_income", 
+          title = "Median Income ($)",
+          palette = "viridis") +
+  tm_shape(census_blackout) +
+  tm_dots()
+
+# save image
+tmap_save(census_income_cropped_map, "census_income.png", width=1920, height=1080, asp=0)
+```
+
+### Plot the distribution of income in impacted and unimpacted tracts
+
+```{r}
+#side by side histogram. I'm not sure how to 
+par(mfrow=c(1,2))
+#histogram of the distribution of income in impacted tracts
+median_income_blackout <- (census_blackout$median_income)
+hist(median_income_blackout,
+main="Median Income for Tracts Impacted by Blackout",
+cex.main = .75,
+xlab="Median Income ($)",
+ylab="Number of Homes",
+col="darkblue",
+n = 30)
+#histogram of the distribution of income in unimpacted tracts
+median_income_no_blackout <- (census_noblackout_only$median_income)
+hist(median_income_no_blackout,
+main="Median Income for Tracts Not Impacted by Blackout",
+cex.main = .75,
+xlab="Median Income ($)",
+ylab="Number of Homes",
+col="grey",
+n = 30)
+
+summary(median_income_blackout)
+summary(median_income_no_blackout)
+```
+
+## Conclusion and Limitations
+
+Based on this analysis, there were approximately 157,411 homes within blackout areas in Houston. Out of the 1,112 census tracts within Houston, 754 census tracks were within the blackout areas. The maps and plots show that census tracts/homes with higher median incomes were impacted by the blackout. This could be due to the fact that homes near city centers tend to be more expensive and people with higher incomes would be living in these homes. One limitation with this study is that when creating the 200-meter buffer surrounding highways, the actual number of homes impacted by the blackout may be miscalculated.
+
+The goal of this investigation was to become more familiar with spatial data. The results and findings of this investigation are not final and should not be cited without additional investigations.
