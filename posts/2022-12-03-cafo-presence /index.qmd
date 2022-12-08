@@ -1,6 +1,6 @@
 ---
-title: "Predicting Concentrated Animal Feeding Operation (CAFO) presence in California based on poverty rate"
-description: "Exploring the relationship between poverty rates and CAFO presence."
+title: "Predicting CAFO presence in California based on poverty rate"
+description: "Analyzing the relationship between poverty rates and CAFO presence."
 author: 
   - name: Alex Reed
     affiliation: MEDS
@@ -280,7 +280,7 @@ When we compute the odd ratio, the odds of CAFO presence increase exponentially 
 
 ## Conclusion
 
-The results indicate that there is a statistically significant relationship between the presence of CAFOs and poverty percent in California. 
+The results indicate that there is a statistically significant relationship between the presence of CAFOs and poverty percent in California.
 
 ## Future Research
 
