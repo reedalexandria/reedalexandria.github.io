@@ -3,6 +3,6 @@ title: "Posts"
 listing: 
   type: grid
   contents: posts
-  sort: "data desc"
+  sort: "date desc"
   categories: true
 ---
