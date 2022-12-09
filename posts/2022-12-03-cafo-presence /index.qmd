@@ -285,7 +285,7 @@ ggplot(mod_plus, aes(x = avg_poverty, y = odds_hat)) +
   labs(x = "Average poverty percent")
 ```
 
-When we compute the odd ratio, the odds of CAFO presence increase exponentially as poverty percent increase. The odds of CAFO presence increase more with higher poverty rates.  
+When I compute the odd ratio, the odds of CAFO presence increase exponentially as poverty percent increase. The odds of CAFO presence increase more with higher poverty rates.  
 
 ## Conclusion 
 
