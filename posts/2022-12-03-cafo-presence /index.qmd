@@ -1,5 +1,5 @@
 ---
-title: "Predicting CAFO presence in California based on poverty rate"
+title: "Predicting CAFO presence in California based on poverty rates"
 description: "Analyzing the relationship between poverty rates and CAFO presence."
 author: 
   - name: Alex Reed
@@ -34,7 +34,7 @@ CAFOs pollute water sources, contaminate air, generate and spread dangerous path
 
 [^2]: https://earthjustice.org/sites/default/files/files/cafopresumptionpetitionfinal_oct2022.pdf
 
-Although CAFOs are found within all regions of California, high densities occur in the Central Valley. The highest number of CAFO facilities were ranked in the 91-100 and 81-90 percentiles according to the CalEnviroScreen (one of my data sources), especially in relation to poor air and water quality metrics.[^3] There is evidence linking poverty in agricultural regions. The issues include lack of economic diversity, low-paying agricultural jobs, and unhealthy working environments.
+Although CAFOs are found within all regions of California, high densities occur in the Central Valley. The highest number of CAFO facilities were ranked in the 91-100 and 81-90 percentiles according to the CalEnviroScreen (one of my data sources), especially in relation to poor air and water quality metrics.[^3] There is evidence linking poverty in agricultural regions due to lack of economic diversity, low-paying agricultural jobs, and unhealthy working environments.
 
 [^3]: Alford, Jennifer B. and Perez, Jocelyn, "Geospatial Applications for Identifying Concentrated Animal Feeding Operations (CAFOs) and Impaired Streams in California" (2019). Geography and Environmental Studies Faculty Publications.
 
@@ -50,9 +50,9 @@ I used CalEnviroScreen 4.0 data developed by the California Office of Environmen
 
 [**Poverty Indicator Data**]{.underline}
 
-For this analysis, I focused on the poverty indicator. Information on poverty is collected annually in the US Census Bureau's American Community Survey (ACS). The poverty indicator is defined as the percent of the population living below two times the federal poverty level. The poverty percent per census tract was calculated by individuals living below 200% the poverty level per census tract divided by total individuals living below 200% of the poverty level. The poverty percent was calculated using a 5-year estimate to provide more reliable estimates for geographic areas with small population sizes. The most recent results available at the census tract scale are the 5-year estimates for 2015-2019. Standard error were used to evaluate the reliability of the calculated poverty rate estimates. Census tracts with unreliable estimates received no score for poverty (null).[^4]
+For this analysis, I focused on the poverty indicator. Information on poverty is collected annually in the US Census Bureau's American Community Survey (ACS). The poverty indicator is defined as the percent of the population living below two times the federal poverty level. The poverty percent per census tract was calculated by individuals living below 200% the poverty level per census tract divided by total individuals living below 200% of the poverty level. The poverty percent was calculated using a 5-year estimate to provide more reliable estimates for geographic areas with small population sizes. The most recent results available at the census tract scale are the 5-year estimates for 2015-2019. Standard error was used to evaluate the reliability of the calculated poverty rate estimates. Census tracts with unreliable estimates received no score for poverty (NA).[^4]
 
-[^4]: CalEnviroScreen 4.0. (2021). California Office of Environmental Health Hazard Assessment, 207.
+[^4]: NPDES Permit Writers' Manual for CAFOs. (n.d.). 673. (https://www.epa.gov/sites/default/files/2015-10/documents/cafo_permitmanual_entire.pdf)
 
 ::: column-margin
 ![](poverty.png)
@@ -62,19 +62,38 @@ For this analysis, I focused on the poverty indicator. Information on poverty is
 
 [**CAFO Data**]{.underline}
 
-The Clean Water Act (CWA) requires the U.S. Environmental Protection Agency (USEPA) to regulate CAFOs.[^5] CAFOs are regulated under the National Pollutant Discharge Elimination System (NPDES) permitting program. The California Integrated Water Quality System (CIWQS) is a database used by the State and Regional Water Quality Control Boards to track information about places of environmental interest, manage NPDES permits and other orders, track inspections, and manage violations and enforcement activities.[^6] I was able to generate a Regulated Facility Report of active NPDES permits that fall under the Animal Feeding Facility type. These permits were exported to excel. The data set includes columns with the facility address, facility name, number of animals at the facility (CAFO population), number of violations, among other information. For this analysis, I focused on the facility addresses. With the facility addresses, I was able to parse out the zip code and determine how many CAFOs were located within each zip code.
+The Clean Water Act (CWA) requires the U.S. Environmental Protection Agency (USEPA) to regulate CAFOs.[^5] CAFOs are regulated under the National Pollutant Discharge Elimination System (NPDES) permitting program. The California Integrated Water Quality System (CIWQS) is a database used by the State and Regional Water Quality Control Boards to track information about places of environmental interest, manage NPDES permits and other orders, track inspections, and manage violations and enforcement activities.[^6] I was able to generate a Regulated Facility Report of active NPDES permits that fall under the Animal Feeding Facility type. These permits were exported to excel. The data set includes columns with the facility address, facility name, number of animals at the facility (CAFO population), number of violations, among other information. For this analysis, I utilized the facility addresses to determine how many CAFOs were located within each zip code.
 
 [^5]: https://www.nrdc.org/sites/default/files/cafos-dont-know-hurting-us-report.pdf
 
 [^6]: California Integrated Water Quality System Project (CIWQS) \| California State Water Resources Control Board. (n.d.). Retrieved December 5, 2022, from https://www.waterboards.ca.gov/water_issues/programs/ciwqs/
 
 ::: column-margin
-![](CAFO_map.png)
+![](cafos.png)
 :::
 
-### [Data Download and Basic Visualizations]{.underline}
+```{r, warning=FALSE, message=FALSE, results='hide'}
+library(leaflet)
+library(janitor)
+library(readxl)
+library(here)
+library(sf)
+#creating the figure in the column 
+cafo_df2<- read_xlsx(here("/Users/alexreed/Documents/MEDS/Courses/EDS_222/final_project/EDS222_Final/data/Regulated_Facility_Report_Detail.xlsx")) |>
+  clean_names()
 
-Load packages
+cafos_plot <- cafo_df2 |>
+  st_as_sf(coords = c("longitude", "latitude"), crs = 4326)
+
+cafos_plot |>
+leaflet() |>
+addProviderTiles(providers$Esri.WorldTopoMap, group = "World Imagery") |>
+addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") |>
+addLayersControl(baseGroups = c("Esri.WorldTopoMap", "Toner Lite")) |>
+  addCircles()
+```
+
+### [Data Download and Basic Visualizations]{.underline}
 
 ```{r, warning=FALSE, message=FALSE, results='hide'}
 #load packages
@@ -86,12 +105,9 @@ library(ggplot2)
 library(modelr)
 library(broom)
 library(readxl)
-```
+library(sjPlot)
 
-Read in CalEnviroScreen 4.0 Data and subset poverty data
-
-```{r, warning=FALSE, message=FALSE, results='hide'}
-#read in CalEnviro data 
+#read in CalEnviro data and subset poverty data
 cal_enviro <- read_xlsx(here("/Users/alexreed/Documents/MEDS/Courses/EDS_222/final_project/EDS222_Final/data/calenviroscreen40resultsdatadictionary_F_2021.xlsx")) |>
   clean_names()
 
@@ -106,30 +122,22 @@ cal_enviro_poverty <- cal_enviro |>
 cal_enviro_poverty$zip <- as.character(cal_enviro_poverty$zip)
 ```
 
-Poverty data histogram
-
-```{r, warning=FALSE, message=FALSE, results='hide', fig.cap = 'Fig 1. Poverty rates in California were not normally distributed. The average mean percent of the population living below two times the federal property level per zip code is 30.86%.'}
+```{r, warning=FALSE, message=FALSE, results='hide', fig.cap = 'Fig 1. Average poverty rates in California were not normally distributed. The average mean percent of the population living below two times the federal property level per zip code is 30.86%.'}
 #poverty histogram
 poverty_hist <- ggplot(cal_enviro_poverty, aes(x = avg_poverty)) +
   geom_histogram(fill = "light gray") +
   labs(x = "Average poverty percent",
        y = "Count",
-       title = "Average percent of population living below two times the federal poverty level") +
+       title = "Distribution of average poverty percent per zip code") +
   theme_light() +
   theme(panel.grid = element_blank(),
         plot.title = element_text(size = 12))
 poverty_hist
-
-#ggsave("fig1.png", width = 8, height = 5, units = "in", dpi = 300)
-summary(cal_enviro_poverty)
 ```
-
-Read in the CAFO data and clean
-
-I created a new column that summed the number of CAFOs per zip code:
 
 ```{r, warning=FALSE, message=FALSE, results='hide'}
 #read in cafo data, clean, and select columns of interest 
+#create new column that sums the number of CAFOs per zip code
 cafo_df<- read_xlsx(here("/Users/alexreed/Documents/MEDS/Courses/EDS_222/final_project/EDS222_Final/data/Regulated_Facility_Report_Detail.xlsx")) |>
   clean_names() |>
   separate(col = facility_address, c("address", "city", "CA_zipcode"), ", ") |>
@@ -141,25 +149,20 @@ cafo_df<- read_xlsx(here("/Users/alexreed/Documents/MEDS/Courses/EDS_222/final_p
   summarise(count = sum(count))
 ```
 
-CAFO data histogram
-
 ```{r, warning=FALSE, message=FALSE, results='hide', fig.cap = 'Fig 2. The number of CAFOs in California were not normally distributed. The mean number of CAFOs per zip code was 9.7.'}
 #CAFO histogram
 cafo_hist <- ggplot(cafo_df, aes(x = count)) +
   geom_histogram(fill = "light gray") +
   labs(x = "Number of CAFOs",
        y = "Count",
-       title = "Number of CAFOs per zip code") +
+       title = "Distribution of CAFOs per zip code") +
   theme_light() +
   theme(panel.grid = element_blank(),
         plot.title = element_text(size = 12))
 cafo_hist
-
-#ggsave("fig2.png", width = 8, height = 5, units = "in", dpi = 300)
-#summary(cafo_df)
 ```
 
-Joining data sets and making a binary variable
+I then joined the data sets and created a binary variable. I created a column based on CAFO presence (`cafo_presence`). If there was a 0 in the `count` column the `cafo_presence` column received a `not present` variable and if there were one or more CAFOs it received a `present` variable. I created an additional column, `cafo_presence_numeric` for the numeric equivalence.
 
 ```{r, warning=FALSE, message=FALSE, results='hide'}
 #join the poverty and CAFO data sets by zip code. Make a binary variable.
@@ -170,11 +173,7 @@ joined_poverty <- mutate(joined_poverty, cafo_presence = ifelse(count==0, "not p
 #creating two new rows: cafo_presence = 'present' or 'not present', and cafo_presence_numeric = 1 or 0
 ```
 
-I joined the poverty and CAFO data sets and created a column based on CAFO presence (cafo_presence). If there was a 0 in the count column the cafo_presence column received a not present variable and if there were one or more CAFOs it received a present variable. I created an additional column, cafo_presence_numeric for the numeric equivalence.
-
-Visualizing a binary response
-
-```{r, Fig 3. Visualizing a binary response}
+```{r, fig.cap = 'Fig 3. Visualizing a binary response'}
 joined_plot <- 
   ggplot(data = joined_poverty, aes(x = avg_poverty, 
                                         y = cafo_presence, 
@@ -184,17 +183,16 @@ joined_plot <-
       labs(x = "Average poverty percent", 
            y = "CAFO Presence")
 joined_plot + scale_color_manual(values = c("#aec3b0", "#124559"))
-
-#ggsave("fig3.png", width = 8, height = 5, units = "in", dpi = 300)
-
-#fig.cap = 'Air quality significantly associate'
 ```
 
 ### [Data Limitations]{.underline}
 
--   I was unable to locate CAFO location data per census tract. Thus, I averaged the poverty per zip code and joined the two data sets by zip code. Multiple census tracts are within one zip code; thus, it's possible the averaging of the poverty rate per zip code could increase or decrease the poverty percent.
+-   I was unable to locate CAFO location data per census tract. Therefore, I averaged the poverty data per zip code and joined the two data sets by zip code. Multiple census tracts are within one zip code; thus, the averaging of the poverty rate per zip code could increase or decrease the poverty percent of an area.
 -   There are 1,736 zip codes in California, but the poverty data only included 1,345 zip codes.
--   The EPA admits that many CAFOs currently discharge water pollution without permits issued under the CWA, in violation of federal law.
+-   Out of 8,035 observations, 75 observations had no poverty data (NA). I removed the NAs.
+-   The EPA admits that numerous CAFOs currently discharge water pollution without NPDES permits.[^7] Thus, there may be CAFOs unaccounted for in this analyses.
+
+[^7]: NPDES Permit Writers' Manual for CAFOs. (n.d.). 673. (https://www.epa.gov/sites/default/files/2015-10/documents/cafo_permitmanual_entire.pdf)
 
 ## Methods
 
@@ -204,15 +202,15 @@ The null hypothesis (H0): There is no relationship between poverty percent and C
 
 The alternative hypothesis (HA): There is a relationship between poverty percent and CAFO presence in California.
 
-#### [**Simple Logistic Regression**]{.underline}
+#### [**Logistic Regression**]{.underline}
 
-Hypothesis There are limitations to a simple linear regression with binary outcomes; thus, I will use a generalized linear model (GLM) to run a logistic regression, as this is useful for modeling a binary response variable.
+There are limitations to a simple linear regression with binary outcomes; thus, I used a generalized linear model (GLM) to run a logistic regression, as this is useful for modeling a binary response variable.
 
-I will use the GLM to model the probability of a binary event (presence of CAFOs) for varying poverty percents in California.
+I used the GLM to model the probability of a binary event (presence of CAFOs) for varying poverty rates in California.
+
+$$\operatorname{logit}(p)=\log \left(\frac{p}{1-p}\right)=\beta_0+\beta_1  (poverty)  +\varepsilon $$
 
 ## Results
-
-Fit Model
 
 ```{r,warning=FALSE, message=FALSE, results='hide'}
 #fit model
@@ -220,7 +218,22 @@ mod_poverty <- glm(cafo_presence_numeric~avg_poverty, data = joined_poverty, fam
 summary(mod_poverty)
 ```
 
-The model that we just fit tells us that:
+```{r}
+#model output table format
+tab_model(mod_poverty,
+          transform = NULL,
+          pred.labels = c("Intercept", "Average Poverty (%)"),
+          dv.labels = c("log CAFO Presence Probability"),
+          show.p = TRUE,
+          p.style = c("numeric_stars"),
+          p.threshold = c(0.10, 0.05, 0.01),
+          string.p = "P-value",
+          show.r2 = FALSE,
+          title = "Tbl 1. Logistic Regression Model Results for Average Poverty Percent",
+          digits = 3)
+```
+
+The model tells us that:
 
 $$
 \operatorname{logit}(\hat p)=\log \left(\frac{\hat p}{1-\hat p}\right)=-3.38+0.0419 x
@@ -228,11 +241,10 @@ $$
 
 For every one unit increase in the average poverty percent, the log odds of a CAFO being present increases by 0.0419.
 
-The p-value associated with this`avg_poverty` coefficient is the chance of seeing our results assuming there is actually no relationship between poverty percent and CAFO presence. The `p-value` is \< 0.05, which means that our result is statistically significant and I can reject the null hypothesis.
+Since the p-value = 1.09e-15 \< 0.05, I can reject the null that there is no relationship between poverty percent and CAFO presence in California.
 
-#### [**Visualizing logistic regression**]{.underline}
-
-```{r, warning=FALSE, message=FALSE, results='hide', fig.cap = 'Fig 4. CAFO presence by average poverty percent per zip code with glm smooth. As the average poverty percent increases, the probability of CAFO presence increases.'}
+```{r, warning=FALSE, message=FALSE, results='hide', fig.cap = 'Fig 4. CAFO presence by average poverty percent per zip code. As the average poverty percent increases, the probability of CAFO presence increases.'}
+#visualizing logistic regression
 joined_plot2 <- 
   ggplot(data = joined_poverty, aes(x = avg_poverty, 
                                     y = cafo_presence_numeric,
@@ -244,10 +256,9 @@ joined_plot2 <-
 joined_plot2 + scale_color_manual(values = c("#aec3b0", "#124559")) +
   geom_smooth(method = "glm", se = FALSE, color = "#598392", 
               method.args = list(family = "binomial"))
-#ggsave("fig4.png", width = 8, height = 5, units = "in", dpi = 300)
 ```
 
-#### [Probability scale and plot]{.underline}
+#### [**Probability scale and plot**]{.underline}
 
 ```{r, warning=FALSE, message=FALSE, results='hide', fig.cap = 'Fig 5: Probability of CAFO presence by poverty percent'}
 mod_plus <- mod_poverty |>
@@ -259,7 +270,6 @@ ggplot(mod_plus, aes(x = avg_poverty, y = y_hat)) +
   geom_line(color = "#598392") + 
   scale_y_continuous("Probability of CAFO Presence", limits = c(0, 1)) +
   labs(x = "Average poverty percent")
-ggsave("fig5.png", width = 8, height = 5, units = "in", dpi = 300)
 ```
 
 #### [**Odds scale and plot**]{.underline}
@@ -273,17 +283,14 @@ ggplot(mod_plus, aes(x = avg_poverty, y = odds_hat)) +
   geom_line(color = "#598392") + 
   scale_y_continuous("Odds of CAFO Presence") +
   labs(x = "Average poverty percent")
-ggsave("fig6.png", width = 8, height = 5, units = "in", dpi = 300)
 ```
 
-When we compute the odd ratio, the odds of CAFO presence increase exponentially as poverty percent increase.
+When we compute the odd ratio, the odds of CAFO presence increase exponentially as poverty percent increase. The odds of CAFO presence increase more with higher poverty rates.  
 
-## Conclusion
+## Conclusion 
 
-The results indicate that there is a statistically significant relationship between the presence of CAFOs and poverty percent in California.
+The results indicate that there is a statistically significant relationship between poverty percent and the presence of CAFOs in California. As the average poverty percent increases, the probability of CAFO presence increases. As previously mentioned, CAFOs are point sources of pollution. Therefore, my analysis provides evidence that CAFO pollution is disproportionately affecting people with high poverty rates in California, which raises environmental justice issues.
 
 ## Future Research
 
-This analysis was a simple univariate logistic regression. Future analyses could look at multiple variables, but instead of predicting CAFO presence, determine if CAFO presence or the number of CAFOs present in a region is a predictor of environmental pollution variables such as poor water or air quality. Other interesting objectives could be to spatially analyze the distribution of CAFOs and proximity to impaired body of waters or areas with air pollution.
-
-## References
+This analysis was a simple univariate logistic regression. Future analyses could look at multiple variables, but instead of predicting CAFO presence, determine if CAFO presence or the number of CAFOs present in a region is a predictor of environmental pollution variables such as poor water or air quality. Other interesting objectives could be to spatially analyze the distribution of CAFOs and proximity to impaired body of waters or areas with air pollution. The end goal would be to provide evidence to inform policy for stricter CAFO regulations and protections for vulnerable communities.
