@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Alexandria Reed"
-  favicon: images/AR_logo.png
+  favicon: image/AR_logo.png
   navbar:
     logo: image/AR_logo.png
     left:
