@@ -4,8 +4,9 @@ project:
 
 website:
   title: "Alexandria Reed"
+  favicon: images/AR_logo.png
   navbar:
-    logo: image/AR-1.png
+    logo: image/AR_logo.png
     left:
       - href: index.qmd
         text: Home
