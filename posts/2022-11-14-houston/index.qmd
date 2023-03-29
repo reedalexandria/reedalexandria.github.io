@@ -5,7 +5,7 @@ author:
   - name: Alex Reed
     url: {}
 date: 2022-11-14
-categories: [MEDS, R, Remote Sensing, Spatial Analysis]
+categories: [R, Remote Sensing, Spatial Analysis]
 image: census_income.png
 draft: false
 format:

@@ -23,6 +23,8 @@ website:
         href: https://github.com/reedalexandria
       - icon: twitter
         href: https://twitter.com/reedalexandria1
+  plugins:
+  - quarto-clipboard
         
 format:
   html:

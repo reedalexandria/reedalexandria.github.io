@@ -3,9 +3,8 @@ title: "CAFOs and Environmental Justice"
 description: "Exploring the environmental impact, missing data implications, and injustices of CAFOs."
 author: 
   - name: Alex Reed
-    affiliation: MEDS
 date: 2022-12-07
-categories: [MEDS, Environmental Justice]
+categories: [Environmental Justice]
 citation: 
   url: https://reedalexandria.github.io/2022-12-07-environmental-injustice-cafos
 image: CAFOs.png

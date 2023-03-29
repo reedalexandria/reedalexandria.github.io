@@ -3,9 +3,8 @@ title: "Predicting CAFO presence in California based on poverty rates"
 description: "Analyzing the relationship between poverty rates and CAFO presence."
 author: 
   - name: Alex Reed
-    affiliation: MEDS
 date: 2022-12-03
-categories: [MEDS, R, Statistical Analysis, Binary Logistic Regression]
+categories: [R, Statistical Analysis, Binary Logistic Regression]
 citation: 
   url: https://reedalexandria.github.io/2022-12-03-cafo-presence
 image: cows.png
@@ -285,9 +284,9 @@ ggplot(mod_plus, aes(x = avg_poverty, y = odds_hat)) +
   labs(x = "Average poverty percent")
 ```
 
-When I compute the odd ratio, the odds of CAFO presence increase exponentially as poverty percent increase. The odds of CAFO presence increase more with higher poverty rates.  
+When I compute the odd ratio, the odds of CAFO presence increase exponentially as poverty percent increase. The odds of CAFO presence increase more with higher poverty rates.
 
-## Conclusion 
+## Conclusion
 
 The results indicate that there is a statistically significant relationship between poverty percent and the presence of CAFOs in California. As the average poverty percent increases, the probability of CAFO presence increases. As previously mentioned, CAFOs are point sources of pollution. Therefore, my analysis provides evidence that CAFO pollution is disproportionately affecting people with high poverty rates in California, which raises environmental justice issues.
 
