@@ -9,7 +9,7 @@ categories: [R]
 citation: 
   url: https://reedalexandria.github.io/2022-12-31-rwrapped
 image: album_cover.png
-draft: true
+draft: false
 format:
   html:
     code-fold: true
