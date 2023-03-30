@@ -49,6 +49,13 @@
     "text": "Special thanks to Nicole Rennie for the inspiration for this blog post.1"
   },
   {
+    "objectID": "posts/2022-12-31-rwrapped/index.html#load-packages",
+    "href": "posts/2022-12-31-rwrapped/index.html#load-packages",
+    "title": "R Stats Wrapped",
+    "section": "Load Packages",
+    "text": "Load Packages\n\n\nshow the code\nlibrary(NCmisc)\nlibrary(janitor)\nlibrary(tidyverse)\nlibrary(patchwork)\nlibrary(showtext)\nlibrary(ggtextures)\nlibrary(png)\nlibrary(cowplot)"
+  },
+  {
     "objectID": "posts/2022-12-31-rwrapped/index.html#convert-r-markdowns-to-r-scripts",
     "href": "posts/2022-12-31-rwrapped/index.html#convert-r-markdowns-to-r-scripts",
     "title": "R Stats Wrapped",
@@ -173,26 +180,5 @@
     "title": "Blog Posts",
     "section": "",
     "text": "R\n\n\n\nAfter being inspired by the popular end-of-year tradition, Spotify Wrapped, I decided to create my own #RStatsWrapped using .Rmd files from 2022.\n\n\n\nAlex Reed\n\n\nDec 31, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnvironmental Justice\n\n\n\nExploring the environmental impact, missing data implications, and injustices of CAFOs.\n\n\n\nAlex Reed\n\n\nDec 7, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nStatistical Analysis\n\n\nBinary Logistic Regression\n\n\n\nAnalyzing the relationship between poverty rates and CAFO presence.\n\n\n\nAlex Reed\n\n\nDec 3, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nRemote Sensing\n\n\nSpatial Analysis\n\n\n\nAnalyzing remotely sensed data to determine the number of residents affected by the power outages caused by storms in February 2021.\n\n\n\nAlex Reed\n\n\nNov 14, 2022\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/2022-12-31-rwrapped/index.html#load-libraries",
-    "href": "posts/2022-12-31-rwrapped/index.html#load-libraries",
-    "title": "R Stats Wrapped",
-    "section": "Load Libraries",
-    "text": "Load Libraries\n\n\nshow the code\nlibrary(NCmisc)\nlibrary(janitor)\nlibrary(tidyverse)\nlibrary(patchwork)\nlibrary(showtext)\nlibrary(ggtextures)\nlibrary(png)\nlibrary(cowplot)"
-  },
-  {
-    "objectID": "posts/2022-12-31-rwrapped/index.html#load-packages",
-    "href": "posts/2022-12-31-rwrapped/index.html#load-packages",
-    "title": "R Stats Wrapped",
-    "section": "Load Packages",
-    "text": "Load Packages\n\n\nshow the code\nlibrary(NCmisc)\nlibrary(janitor)\nlibrary(tidyverse)\nlibrary(patchwork)\nlibrary(showtext)\nlibrary(ggtextures)\nlibrary(png)\nlibrary(cowplot)"
-  },
-  {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Resume",
-    "section": "",
-    "text": "Download Resume Here"
   }
 ]
