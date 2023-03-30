@@ -38,20 +38,20 @@ addMarkers(label = cities$city)
 During my free time, I enjoy being outdoors and participating in various activities such as playing soccer or volleyball, running, hiking, and camping with friends. I'm also passionate about health and wellness, and like to stay informed and inspired by reading books on nutrition and related topics. Prioritizing my physical health is important to me, so I also make time for regular workouts. Cooking and experimenting with plant-based recipes is another hobby I enjoy. My hobbies help me maintain a healthy work-life balance and bring joy to my everyday routine.
 
 ::: {layout-ncol="2"}
-![](image/soccer.jpg)
+![](image/soccer.png)
 
 ![](image/friends.png)
 
 ![](image/yoga.png)
 
-![](image/skydive.jpg)
+![](image/skydive.png)
 
 ![](image/food.png)
 
-![](image/volleyball.jpg)
+![](image/volleyball.png)
 
-![](image/running.jpg)
+![](image/running.png)
 
-![](image/kayak.jpg)
+![](image/kayak.png)
 :::
 :::
