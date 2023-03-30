@@ -19,7 +19,11 @@ page-layout: article
 base_url: https://reedalexandria.github.io
 ---
 
-## Load Libraries
+Special thanks to Nicole Rennie for the inspiration for this blog post.[^1]
+
+[^1]: Nicola Rennie. December 3, 2022. nrennie.rbind.io/blog/2022-12-03-how-to-make-your-own-rstats-wrapped
+
+## Load Packages
 
 ```{r, message = FALSE}
 library(NCmisc)
@@ -30,26 +34,24 @@ library(showtext)
 library(ggtextures)
 library(png)
 library(cowplot)
-library(here)
 ```
 
 ## Convert R Markdowns to R scripts
 
-I used `knitr::purl` to convert my .Rmd files saved in a specific folder into .R scripts.
+You can use the `knitr::purl` function to convert .Rmd files into .R scripts. If you prefer using .R scripts, this step is not necessary. To convert multiple files at once, you can create a function using the code below. Alternatively, if you prefer to convert the files manually, you can simply insert the filename for each .Rmd file one at a time.
 
 ```{r}
 #Convert R Markdown to R script
 # knitr::purl("filepath/filename.Rmd")
+
 ```
 
 Choose the directory where your converted .R scripts are located. Use the `list.files` function to create a character vector called `all_files` that contains the names of all files in the directory specified by `file_path` that have an ".R" or ".r" file extension.
 
 ```{r}
-setwd("/Users/alexreed/Documents/MEDS/Website/reedalexandria.github.io/posts/2022-12-31-rwrapped/data")
-file_path <- glue::glue("/Users/alexreed/Documents/MEDS/Website/reedalexandria.github.io/posts/2022-12-31-rwrapped/data")
+file_path <- ("/Users/alexreed/Documents/MEDS/Website/reedalexandria.github.io/posts/2022-12-31-rwrapped/data")
 all_files <- list.files(path = file_path, recursive = TRUE, pattern = "\\.[Rr]$")
-
-all_functions <- map(.x = all_files, .f = ~ list.functions.in.file(.x))
+all_functions <- map(.x = all_files, .f = ~ list.functions.in.file(file.path(file_path, .x)))
 ```
 
 ## Select your top five packages
@@ -66,7 +68,7 @@ func_data <- unlist(all_functions) |>
 ## Find the hex sticker .png for each package
 
 ```{r}
-imgs <- tibble(img = c("https://www.r-project.org/logo/Rlogo.png",
+hex_imgs <- tibble(img = c("https://www.r-project.org/logo/Rlogo.png",
                        "https://www.r-project.org/logo/Rlogo.png",
                        "https://ggplot2.tidyverse.org/logo.png",
                        "https://ggplot2.tidyverse.org/logo.png",
@@ -78,14 +80,13 @@ imgs <- tibble(img = c("https://www.r-project.org/logo/Rlogo.png",
 First, add a font similar to the Spotify font. The font used by Spotify is Spotify Circular.
 
 ```{r}
-#add font that Spotify uses
 font_add("Circular", "/Users/alexreed/Downloads/Circular/CircularStd-Medium.otf")
 showtext_auto()
 ```
 
 Use `ggplot2` to create the top function graphic.
 
-```{r}
+```{r, fig.dim = c(7, 8.5)}
 top_functions <- ggplot() +
   # add text with the numbers 1 to 5
   geom_text(data = data.frame(),
@@ -107,7 +108,7 @@ top_functions <- ggplot() +
             fontface = "bold",
             family = "Circular") +
   # add images for each package
-  geom_textured_rect(data = imgs, 
+  geom_textured_rect(data = hex_imgs, 
                      aes(xmin = rep(1.5, 5), xmax = rep(2.1, 5),
                          ymax = 1:5-0.3, ymin = 1:5+0.3, image = img), 
                      lty = "blank",
@@ -159,7 +160,7 @@ inset1 <- ggplot(data = curve1,
   scale_y_reverse()
 ```
 
-Overlay the geometry shape and the function graphic using `patchwork`.
+Using the `patchwork` package, you can overlay the geometry shape and the function graphic to create a single plot. 
 
 ```{r}
 updated <- top_functions + inset_element(inset1, left = -1, right = 1.2, bottom = 0, top = 2.2, align_to = "full") &
@@ -173,24 +174,23 @@ updated <- top_functions + inset_element(inset1, left = -1, right = 1.2, bottom 
                                     size = 30))
 ```
 
-I then created an album cover in Canva. The photo is from a concert I attended in Vegas.
+I then created an album cover in Canva. The photo is from a Justin Timberlake concert I attended in Las Vegas, Nevada.
 
 ```{r}
-#upload album cover
-#I created the album cover in Canva
 album <- readPNG("/Users/alexreed/Documents/MEDS/Practice/wrapped/album_cover.png", native = TRUE)
 ```
 
 Now, combine the graphic and album cover to complete the #RStatsWrapped graphic.
 
-```{r, warning = FALSE}
-#combine graphic and album 
+```{r, fig.dim = c(10, 15), warning=FALSE}
 ggdraw(updated) + 
   draw_image(album,
-             scale = 0.45,
+             scale = 0.35,
              halign = 0.5,
              valign = 0.99)
 
 #save final graphic
-ggsave("rwrapped_album.png", width = 2.5, height = 5, units = "in", )
+#ggsave("rwrapped_album.png", width = 2.5, height = 5, units = "in", )
 ```
+
+

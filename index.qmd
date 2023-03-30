@@ -23,7 +23,14 @@ about:
 I'm Alexandria Reed. I'm an Environmental Specialist with interests in programming, data science, data visualization, and science communication. I am currently a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara.
 
 ### Education
-`r fontawesome::fa("graduation-cap", fill = "#124559", a11y = "sem")` Master of Environmental Data Science \| Expected 2023 \| <p class="custom-subtitle2">Bren School of Environmental Science & Management - University of California, Santa Barbara (UCSB)</p>
+
+`r fontawesome::fa("graduation-cap", fill = "#124559", a11y = "sem")` Master of Environmental Data Science \| Expected 2023 \|
+
+<p class="custom-subtitle2">
+
+Bren School of Environmental Science & Management - University of California, Santa Barbara (UCSB)
+
+</p>
 
 <div class="topbr">
 
@@ -34,3 +41,4 @@ I'm Alexandria Reed. I'm an Environmental Specialist with interests in programmi
 ### Experience
 
 `r fontawesome::fa("briefcase", fill = "#124559", a11y = "sem")` Environmental Specialist \| 2018-present \| Citadel EHS
+
