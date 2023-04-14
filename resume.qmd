@@ -16,35 +16,37 @@ title: "Resume"
 
 **Master of Environmental Data Science (Expected June 2023) \| Bren School of Environmental Science & Management -- University of California, Santa Barbara (UCSB)**
 
->**Highlighted Coursework:** Statistics for Environmental Data Science, Geospatial and Remote Sensing, Machine Learning, Modeling Environmental Systems, Databases and Data Management (all to be completed by June 2023) 
+> **Highlighted Coursework:** Statistics for Environmental Data Science, Geospatial and Remote Sensing, Machine Learning, Modeling Environmental Systems, Databases and Data Management (all to be completed by June 2023)
 
->**Leadership/Involvement:** Class Chair, Dean's Advisory Council 
+> **Leadership/Involvement:** Class Chair, Dean's Advisory Council
 
 **Bachelor of Science in Environmental Studies (June 2017) \| University of California, Santa Barbara (UCSB)**
 
->**Highlighted Coursework:** Probability and Statistics, Solar and Renewable Energy Systems, Energy and the Environment, Principle Environmental Planning, Diet and Climate Change 
+> **Highlighted Coursework:** Probability and Statistics, Solar and Renewable Energy Systems, Energy and the Environment, Principle Environmental Planning, Diet and Climate Change
 
 ### Data Science Projects
 
-**Data Science Master's Capstone Project (1/23--Present) \|Informing Forest Conservation Regulations in Paraguay | Clients: Dr. Robert Heilmayr, UCSB; Paraguay's National Forestry Institute (INFONA)** 
+**Data Science Master's Capstone Project (1/23--Present) \|Informing Forest Conservation Regulations in Paraguay \| Clients: Dr. Robert Heilmayr, UCSB; Paraguay's National Forestry Institute (INFONA)**
 
->-   Create and share publicly facing materials on the project as required by the Bren School and/or client; organize and communicate team meetings; and manage GitHub projects and weekly tasks. </blockquote>
+> -   Create and share publicly facing materials on the project as required by the Bren School and/or client; organize and communicate team meetings; and manage GitHub projects and weekly tasks.
+>
+>     </blockquote>
 
->-   Assess the compliance of property owners' execution of their approved land use plans (LUPs) and quantify historic deforestation rates in the Paraguayan Chaco.
+> -   Assess the compliance of property owners' execution of their approved land use plans (LUPs) and quantify historic deforestation rates in the Paraguayan Chaco.
 
->-   Create a law-based simulation tool in R to evaluate the effects of current and alternate laws on conserved forest area in the undeveloped Chaco region.
+> -   Create a law-based simulation tool in R to evaluate the effects of current and alternate laws on conserved forest area in the undeveloped Chaco region.
 
->-   Train a machine learning model to predict deforestation patterns in the undeveloped region of the Paraguayan Chaco, including variations in the laws governing LUPs.
+> -   Train a machine learning model to predict deforestation patterns in the undeveloped region of the Paraguayan Chaco, including variations in the laws governing LUPs.
 
->-   Develop an interactive R Shiny dashboard visualizing results. 
+> -   Develop an interactive R Shiny dashboard visualizing results.
 
 **Statistics for Environmental Data Science Final Project (11/22--12/22)**
 
->-   Investigated the relationship between poverty rates and the probability of concentrated animal feeding operation (CAFO) presence in California.
+> -   Investigated the relationship between poverty rates and the probability of concentrated animal feeding operation (CAFO) presence in California.
 
->-   Used a generalized linear model (GLM) to analyze relevant data and found a statistically significant relationship between poverty rates and the presence of CAFOs in California.
+> -   Used a generalized linear model (GLM) to analyze relevant data and found a statistically significant relationship between poverty rates and the presence of CAFOs in California.
 
->-   Results provided evidence that CAFO pollution disproportionately affects people with high poverty rates in California, raising environmental justice issues.
+> -   Results provided evidence that CAFO pollution disproportionately affects people with high poverty rates in California, raising environmental justice issues.
 
 **Dust Emission Monitoring (1/20--8/22) Environmental Compliance Consulting \| Role: Project Manager \| Client: KPRS Construction Services Inc.**
 

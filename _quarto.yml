@@ -11,7 +11,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: resume/resume.pdf
+      - href: resume.qmd #resume/resume.pdf
         text: Resume
       - href: blog_posts.qmd
         text: Blog Posts
