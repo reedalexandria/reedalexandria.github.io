@@ -41,4 +41,3 @@ Bren School of Environmental Science & Management - University of California, Sa
 ### Experience
 
 `r fontawesome::fa("briefcase", fill = "#124559", a11y = "sem")` Environmental Specialist \| 2018-present \| Citadel EHS
-

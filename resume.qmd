@@ -2,3 +2,97 @@
 title: "Resume"
 ---
 
+[Download Resume](resume.pdf){style="color: #124559"}
+
+::: panel-tabset
+### Summary of Qualifications
+
+-   Data-driven environmental specialist with a Master of Environmental Data Science (expected June 2023) and a Bachelor of Science in Environmental Studies.
+-   Extensive experience in the environmental sector, including roles with non-profit organizations, public research universities, and consulting companies.
+-   Experienced in collaborating with diverse teams on data-driven research projects to develop innovative solutions to complex environmental challenges.
+-   Skilled in programming languages such as R and Python, with digital literacy skills in GitHub, Git, Excel, PowerPoint, and QGIS.
+
+### Education
+
+**Master of Environmental Data Science (Expected June 2023) \| Bren School of Environmental Science & Management -- University of California, Santa Barbara (UCSB)**
+
+>**Highlighted Coursework:** Statistics for Environmental Data Science, Geospatial and Remote Sensing, Machine Learning, Modeling Environmental Systems, Databases and Data Management (all to be completed by June 2023) 
+
+>**Leadership/Involvement:** Class Chair, Dean's Advisory Council 
+
+**Bachelor of Science in Environmental Studies (June 2017) \| University of California, Santa Barbara (UCSB)**
+
+>**Highlighted Coursework:** Probability and Statistics, Solar and Renewable Energy Systems, Energy and the Environment, Principle Environmental Planning, Diet and Climate Change 
+
+### Data Science Projects
+
+**Data Science Master's Capstone Project (1/23--Present) \|Informing Forest Conservation Regulations in Paraguay | Clients: Dr. Robert Heilmayr, UCSB; Paraguay's National Forestry Institute (INFONA)** 
+
+>-   Create and share publicly facing materials on the project as required by the Bren School and/or client; organize and communicate team meetings; and manage GitHub projects and weekly tasks. </blockquote>
+
+>-   Assess the compliance of property owners' execution of their approved land use plans (LUPs) and quantify historic deforestation rates in the Paraguayan Chaco.
+
+>-   Create a law-based simulation tool in R to evaluate the effects of current and alternate laws on conserved forest area in the undeveloped Chaco region.
+
+>-   Train a machine learning model to predict deforestation patterns in the undeveloped region of the Paraguayan Chaco, including variations in the laws governing LUPs.
+
+>-   Develop an interactive R Shiny dashboard visualizing results. 
+
+**Statistics for Environmental Data Science Final Project (11/22--12/22)**
+
+>-   Investigated the relationship between poverty rates and the probability of concentrated animal feeding operation (CAFO) presence in California.
+
+>-   Used a generalized linear model (GLM) to analyze relevant data and found a statistically significant relationship between poverty rates and the presence of CAFOs in California.
+
+>-   Results provided evidence that CAFO pollution disproportionately affects people with high poverty rates in California, raising environmental justice issues.
+
+**Dust Emission Monitoring (1/20--8/22) Environmental Compliance Consulting \| Role: Project Manager \| Client: KPRS Construction Services Inc.**
+
+> -   Oversaw the installation and maintenance of field monitoring equipment and managed daily operations relating to dust monitoring in lead-impacted soil during the redevelopment of a former cement plant.
+
+> -   Compiled, wrangled, analyzed, and prepared reports of wind and dust data for weekly submissions to regulatory bodies, including the South Coast Air Quality Management District (SCAQMD) and the Department of Toxic Substances Control (DTSC).
+
+> -   Mitigated compliance issues and reduced particulate emissions to safeguard community health.
+
+### Professional Experience
+
+**Citadel EHS, Glendale, CA Environmental Specialist (1/18--8/22 Full Time; 8/22--Present Part-Time)**
+
+> -   Manage wastewater surveillance projects for the presence of SARS-COV-2. Successfully identify the presence of COVID in wastewater and implement measures to reduce the risk of outbreaks.
+
+> -   Prepare Phase I Environmental Site Assessments and conduct Phase II Site Investigations, consisting of soil, soil vapor, groundwater, and indoor air sample collection.
+
+> -   Manage radon surveying projects for various multi-family residential clients.
+
+> -   Conduct hazardous material inventories, environmental audits, and inspections of facilities.
+
+**UCSB, Santa Barbara, CA Course Reader (10/22-12/22 Part-Time)**
+
+> -   Graded essays and assignments submitted by undergraduate students enrolled in ENV S 193ST Sea Turtle Conservation & Management course.
+
+> -   Posted grades and provided constructive feedback on the online learning management system in a timely and accurate manner to help students improve their writing and critical thinking skills.
+
+**Cheadle Center for Biodiversity and Ecological Restoration (CCBER), Santa Barbara, CA Environmental Educator (4/17--6/17) \| Restoration Intern (3/16--6/16)**
+
+> -   Led fieldtrips, workshops, and created unique lesson plans to increase knowledge about environmental sciences for fifth graders.
+
+> -   Monitored vegetation and wildlife, managed invasive species, collected vegetation samples for research, and worked on projects independently as well as with a team.
+
+> -   Managed and led the restoration of a portion of a UCSB-owned wetland.
+
+**Global Student Embassy, Santa Barbara, CA Trip Leader/Campus Representative (9/16--5/17)**
+
+> -   Coordinated and led a group of peers to be a part of international reforestation and sustainable agriculture projects.
+
+> -   Organized fundraising events, raising over \$15,000, to assist locals in Ecuador and Nicaragua.
+
+### Skills, Certifications, and Affiliations
+
+-   **Languages:** R, Python, SQL Environments: Posit (RStudio), Visual Studio Code, JupyterLab
+
+-   **Technical:** Git/GitHub, QGIS, Tableau, Data Visualization, Geospatial Analysis, Modeling
+
+-   **Certifications/Degree:** Associate of Arts in Liberal Arts & Sciences: Mathematics and Science (May 2015), OSHA 40-Hour HAZWOPER, OSHA 10-Hour Construction Outreach
+
+-   **Affiliations:** California Association of Environmental Professionals (AEP)
+:::

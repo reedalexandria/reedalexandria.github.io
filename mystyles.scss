@@ -18,6 +18,21 @@ $body-bg: $light-green;
 $link-color: $indigo;
 $fontcolor: $indigo;
 
+// Define a class for blockquotes - not currently using 
+.blockquote {
+  margin: 20px 0;
+  padding: 10px;
+  border-left: 3px solid $light-green;
+  font-style: italic;
+  color: $dark_blue;
+}
+
+
+// Apply the blockquote styles to the element
+blockquote {
+  @extend .blockquote;
+}
+
 // Font size: 
 
 $my-font-size: 12;
