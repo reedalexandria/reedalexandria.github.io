@@ -1,11 +1,12 @@
 ---
 title: "Alexandria Reed"
-subtitle: Environmental Data Scientist
-image: image/Headshot_2.jpg
+#subtitle: Environmental Data Scientist
+image: image/alex1.png
+#image: image/Headshot_2.jpg
 about: 
-  template: trestles
-  image-shape: rounded
-  image-width: 14em
+  template: jolla
+  #image-shape: rounded
+  image-width: 18em
   links: 
     - icon: linkedin
       text: LinkedIn
@@ -16,28 +17,63 @@ about:
     - icon: envelope
       text: Email
       href: mailto:reed.alexandria@outlook.com
+# listing:
+#   id: blog-listing
+#   contents:   
+#     - "posts/2022-12-03-cafo-presence/index.qmd"
+#     - "posts/2022-12-31-rwrapped/index.qmd"
+#   sort: "date desc"
+#   type: grid
+#   max-items: 3
+#   grid-columns: 3
+#   fields: [image, date, title]
 ---
 
-### Welcome!
+I am an ***Environmental Data Scientist***, passionate about exploring the intersection of environmental science and data analytics. Welcome to my blog, where I share my journey, interests, and the exciting projects I've worked on. 
 
-I'm Alexandria Reed. I'm an Environmental Specialist with interests in programming, data science, data visualization, and science communication. I am currently a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara.
+<!-- Green line -->
+<hr style="border: 1px solid #607744; background-color: #607744; height: 1px; margin: 2em 0;">
 
-### Education
 
-`r fontawesome::fa("graduation-cap", fill = "#124559", a11y = "sem")` Master of Environmental Data Science \| Expected 2023 \|
+:::{#news}
+<style>
+#news {
+  text-align: left;
+  margin-top: 2em; /* Adjust this value to control the space between the two sections */
+}
+</style>
 
-<p class="custom-subtitle2">
+### [News and Updates]{.underline}
 
-Bren School of Environmental Science & Management - University of California, Santa Barbara (UCSB)
+- **Currently seeking data science job opportunities!**
 
-</p>
+- June 16, 2023: Graduated with Master of Environmental Data Science
 
-<div class="topbr">
+- June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public
+:::
 
-<p class="custom-subtitle">
+<!-- ### Featured Blogs -->
 
-`r fontawesome::fa("graduation-cap", fill = "#124559", a11y = "sem")` Bachelor of Science in Environmental Studies \| 2017 \| UCSB
+<!-- :::{#blog-listing} -->
 
-### Experience
+<!-- ::: -->
 
-`r fontawesome::fa("briefcase", fill = "#124559", a11y = "sem")` Environmental Specialist \| 2018-present \| Citadel EHS
+<!-- ### Education -->
+
+<!-- `r fontawesome::fa("graduation-cap", fill = "#124559", a11y = "sem")` Master of Environmental Data Science \| 2023 \| -->
+
+<!-- <p class="custom-subtitle2"> -->
+
+<!-- Bren School of Environmental Science & Management - University of California, Santa Barbara (UCSB) -->
+
+<!-- </p> -->
+
+<!-- <div class="topbr"> -->
+
+<!-- <p class="custom-subtitle"> -->
+
+<!-- `r fontawesome::fa("graduation-cap", fill = "#124559", a11y = "sem")` Bachelor of Science in Environmental Studies \| 2017 \| UCSB -->
+
+<!-- ### Experience -->
+
+<!-- `r fontawesome::fa("briefcase", fill = "#124559", a11y = "sem")` Environmental Specialist \| 2018-present \| Citadel EHS -->

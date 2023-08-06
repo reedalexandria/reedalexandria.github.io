@@ -1,37 +1,118 @@
 ---
 title: "About"
+subtitle: "Welcome! Here, you'll find a glimpse into my interests, passions, and adventures."
 ---
 
 ::: panel-tabset
 ### About Me
 
-I'm a graduate student in the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara. My current interests lie in sustainable food systems, addressing climate change, and reducing carbon footprints. I completed my undergraduate studies at UC Santa Barbara in 2017, graduating with a Bachelor of Science in Environmental Studies. As an undergraduate student, I led reforestation and sustainable agriculture projects in South America for a nonprofit organization. After graduating, I worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company, where I evaluated and identified environmental impacts as well as recommended and implemented solutions for clients in the private and public sectors. During my time working as an environmental consultant, I observed the disproportionate environmental impacts in marginalized communities and the need for reproducible data science and visualization skills to develop solutions to environmental issues. My goal is to utilize data science tools to derive data-driven solutions for complex environmental problems and effectively communicate the information so that it is accessible and enacts change.
+I recently graduated from the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara (UCSB). My current interests lie in Environmental Policy, Forestry Management, Biodiversity Conservation, Sustainable Food Systems, Environmental Education and Communication, and Data Visualization and Storytelling.
 
-### Travel
+Prior to my master's studies, I completed my undergraduate studies at UCSB in 2017, graduating with a Bachelor of Science in Environmental Studies. During my time as an undergraduate, I had the opportunity to lead reforestation and sustainable agriculture projects in South America for a nonprofit organization
 
-I have been fortunate enough to travel around the world, whether it was for leisure, volunteering, or professional purposes. My aspiration is to visit all the continents someday! Check out some of the destinations I have explored thus far.
+After graduating, I worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company. In this role, I evaluated and identified environmental impacts, and I recommended and implemented solutions for clients in both the private and public sectors.
 
-*I will be adding travel photos soon*
+Throughout my career as an environmental consultant, I witnessed the disproportionate environmental impacts in marginalized communities, which highlighted the urgency for reproducible data science and visualization skills in developing effective solutions to environmental challenges.
+
+My ultimate goal is to leverage data science tools to derive data-driven solutions for complex environmental problems and to effectively communicate this information to diverse audiences, making it accessible and driving positive change.
+
+### Travels
+
+::: panel-tabset
+## National Parks
+
+One of my ultimate life goals is to explore the United States' national parks. With a passion for exploration, I have already embarked on this journey, stepping foot into some of the most iconic national parks across the US. From the rugged landscape of Volcanoes in Hawaii to the awe-inspiring beauty of Glacier in Montana, each park has left a lasting memory.
+
+To keep track of my progress, I've mapped out my national park adventures. This interactive map not only showcases the parks I have had the privilege of exploring but also highlights the ones still awaiting my arrival.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
-library(sf)
 library(leaflet)
 library(here)
 library(readxl)
+library(htmltools)
+library(htmlwidgets)
 
-cities <- read_excel(here("data", "worldcities.xlsx"))
+# Read data
+np <- read_excel(here("data", "national_parks.xlsx"))
 
-cities_sf <- cities |>
-  st_as_sf(coords = c("lng", "lat"), crs = 4326)
+# Function to determine marker color based on the "Visited" status
+colorizeVisited <- function(visited) {
+  if (visited == "Yes") {
+    return("#679c6c")
+  } else {
+    return("#F26419")
+  }
+}
 
-cities_sf |>
-leaflet() |>
-addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") |>
-addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") |>
-addLayersControl(baseGroups = c("World Imagery", "Toner Lite")) |>
-addMarkers(label = cities$city)
+# Create popup content function
+popup_content <- function(park_name, state, visited, photo) {
+  if (!is.na(photo) && !grepl("^NA$", photo, ignore.case = TRUE)) {
+    img_tag <- tags$img(src = photo, style = "max-width: 100%; max-height: 200px;")
+    paste0("<b>National Park:</b> ", park_name, ", ", state, "<br>",
+           "<b>Visited:</b> ", visited, "<br>", img_tag)
+  } else {
+    paste0("<b>National Park:</b> ", park_name, ", ", state, "<br>",
+          "<b>Visited:</b> ", visited)
+  }
+}
+
+# Create leaflet map
+m <- leaflet(data = np) |>
+  addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") |>
+  addProviderTiles(providers$CartoDB.Positron, group = "CartoDB Positron") |>
+  addLayersControl(baseGroups = c("World Imagery", "CartoDB Positron"),
+                   options = layersControlOptions(collapsed = FALSE))
+
+# Add circle markers with popups using lapply
+invisible(lapply(seq_len(nrow(np)), function(i) {
+  visited_status <- np$Visited[i]
+  m <<- m |> addCircleMarkers(lng = np$Longitude[i], 
+                                lat = np$Latitude[i], 
+                                label = np$Park[i], 
+                                color = colorizeVisited(visited_status),
+                                radius = 6,
+                                fillOpacity = 0.8,
+                                #stroke = FALSE,
+                                popup = popup_content(np$Park[i], np$`State(s)`[i], visited_status, np$Photo[i]))
+}))
+
+# Add legend for Visited status
+m <- m |> addLegend("bottomright",
+                     colors = c("#679c6c", "#F26419"),
+                     labels = c("Yes", "Not yet"),
+                     title = "Visited Status",
+                     opacity = 0.7)
+
+m
 ```
+
+## Countries
+
+While reaching every country might be too lofty of a goal, I am determined to visit every continent on earth. I have created this map to keep a record of my global explorations.
+
+**(map in progress)**
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# library(tidyverse)
+# library(sf)
+# library(leaflet)
+# library(here)
+# library(readxl)
+# 
+# cities <- read_excel(here("data", "worldcities.xlsx"))
+# 
+# cities_sf <- cities |>
+#   st_as_sf(coords = c("lng", "lat"), crs = 4326)
+# 
+# cities_sf |>
+# leaflet() |>
+# addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") |>
+# addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") |>
+# addLayersControl(baseGroups = c("World Imagery", "Toner Lite")) |>
+# addMarkers(label = cities$city)
+```
+:::
 
 ### Hobbies
 

@@ -7,22 +7,26 @@
 $indigo: #01161e;
 $dark_blue:#124559;
 $blue: #598392;
-$green: #aec3b0;
-$light_green: #bdc9bf;
+$green: #607744;
+$wine: #773344;
+$light_green: #d3dbd4;
+$link-hover-color: $green;
+
+// light-green: #bdc9bf;
 
 //#cfdbd5
 
 // Base Document Colors
 $navbar-bg: $dark_blue;
-$body-bg: $light-green;
-$link-color: $indigo;
-$fontcolor: $indigo;
+$body-bg: $light_green;
+$link-color: $green;
+//$fontcolor: $wine;
 
 // Define a class for blockquotes - not currently using 
 .blockquote {
   margin: 20px 0;
   padding: 10px;
-  border-left: 3px solid $light-green;
+  border-left: 3px solid $light_green;
   font-style: italic;
   color: $dark_blue;
 }
@@ -42,17 +46,17 @@ $my-font-size: 12;
 h1, h3 {
   letter-spacing: 4px;
   font-weight: 700;
-  color: $indigo;
+  color: $green;
 }
 
 .title {
-  color: $indigo;
+  color: $dark_blue;
 }
 
 .custom-subtitle {
   font-size: 22px;
   font-style: italic;
-  color: $indigo;
+  //color: $wine;
 }
 
 

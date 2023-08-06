@@ -4,13 +4,21 @@ project:
 
 website:
   title: "Alexandria Reed"
-  favicon: image/AR_logo.png
+  favicon: image/logo1.png
   navbar:
-    logo: image/AR_logo.png
+    logo: image/logo1.png
+    right: 
+      - icon: github
+        href: https://github.com/reedalexandria
+      - icon: twitter
+        href: https://twitter.com/reedalexandria1
+      - icon: linkedin
+        href: https://www.linkedin.com/in/alexandria-reed-579132128/
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
       - href: resume.qmd #resume/resume.pdf
         text: Resume
       - href: blog_posts.qmd
@@ -20,9 +28,9 @@ website:
     left: "Copyright 2022, Alexandria Reed"
     right: 
       - icon: github
-        href: https://github.com/reedalexandria
-      - icon: twitter
-        href: https://twitter.com/reedalexandria1
+        text: Source Code 
+        href: https://github.com/reedalexandria/reedalexandria.github.io
+
   plugins:
   - quarto-clipboard
         
