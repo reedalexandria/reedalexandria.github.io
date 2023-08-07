@@ -29,27 +29,28 @@ about:
 #   fields: [image, date, title]
 ---
 
-I am an ***Environmental Data Scientist***, passionate about exploring the intersection of environmental science and data analytics. Welcome to my blog, where I share my journey, interests, and the exciting projects I've worked on. 
+I am an ***Environmental Data Scientist***, passionate about exploring the intersection of environmental science and data analytics. Welcome to my blog, where I share my journey, interests, and the exciting projects I've worked on.
 
 <!-- Green line -->
+
 <hr style="border: 1px solid #607744; background-color: #607744; height: 1px; margin: 2em 0;">
 
-
-:::{#news}
+::: {#news}
+```{=html}
 <style>
 #news {
   text-align: left;
   margin-top: 2em; /* Adjust this value to control the space between the two sections */
 }
 </style>
-
+```
 ### [News and Updates]{.underline}
 
-- **Currently seeking data science job opportunities!**
+-   **Currently seeking data science job opportunities!**
 
-- June 16, 2023: Graduated with Master of Environmental Data Science
+-   June 16, 2023: Graduated with Master of Environmental Data Science
 
-- June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public
+-   June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public
 :::
 
 <!-- ### Featured Blogs -->
