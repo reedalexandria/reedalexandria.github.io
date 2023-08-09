@@ -181,7 +181,8 @@ joined_plot <-
                  alpha = 0.8) +
       labs(x = "Average poverty percent", 
            y = "CAFO Presence")
-joined_plot + scale_color_manual(values = c("#aec3b0", "#124559"))
+joined_plot + scale_color_manual(values = c("#aec3b0", "#124559")) +
+  theme_minimal()
 ```
 
 ### [Data Limitations]{.underline}
@@ -254,7 +255,8 @@ joined_plot2 <-
        y = "CAFO Presence")
 joined_plot2 + scale_color_manual(values = c("#aec3b0", "#124559")) +
   geom_smooth(method = "glm", se = FALSE, color = "#598392", 
-              method.args = list(family = "binomial"))
+              method.args = list(family = "binomial")) +
+  theme_minimal()
 ```
 
 #### [**Probability scale and plot**]{.underline}
@@ -268,7 +270,8 @@ ggplot(mod_plus, aes(x = avg_poverty, y = y_hat)) +
   geom_point(color = "#124559") + 
   geom_line(color = "#598392") + 
   scale_y_continuous("Probability of CAFO Presence", limits = c(0, 1)) +
-  labs(x = "Average poverty percent")
+  labs(x = "Average poverty percent") +
+  theme_minimal()
 ```
 
 #### [**Odds scale and plot**]{.underline}
@@ -281,7 +284,8 @@ ggplot(mod_plus, aes(x = avg_poverty, y = odds_hat)) +
   geom_point(color = "#124559") + 
   geom_line(color = "#598392") + 
   scale_y_continuous("Odds of CAFO Presence") +
-  labs(x = "Average poverty percent")
+  labs(x = "Average poverty percent") +
+  theme_minimal()
 ```
 
 When I compute the odd ratio, the odds of CAFO presence increase exponentially as poverty percent increase. The odds of CAFO presence increase more with higher poverty rates.
