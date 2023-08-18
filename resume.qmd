@@ -14,9 +14,9 @@ title: "Resume"
 
 ### Education
 
-**Master of Environmental Data Science (Expected June 2023) \| Bren School of Environmental Science & Management -- University of California, Santa Barbara (UCSB)**
+**Master of Environmental Data Science (June 2023) \| Bren School of Environmental Science & Management -- University of California, Santa Barbara (UCSB)**
 
-> **Highlighted Coursework:** Statistics for Environmental Data Science, Geospatial and Remote Sensing, Machine Learning, Modeling Environmental Systems, Databases and Data Management (all to be completed by June 2023)
+> **Highlighted Coursework:** Statistics for Environmental Data Science, Geospatial and Remote Sensing, Data Visualization and Communication, Machine Learning, Modeling Environmental Systems, Databases and Data Management
 
 > **Leadership/Involvement:** Class Chair, Dean's Advisory Council
 
@@ -28,17 +28,17 @@ title: "Resume"
 
 **Data Science Master's Capstone Project (1/23--Present) \|Informing Forest Conservation Regulations in Paraguay \| Clients: Dr. Robert Heilmayr, UCSB; Paraguay's National Forestry Institute (INFONA)**
 
-> -   Create and share publicly facing materials on the project as required by the Bren School and/or client; organize and communicate team meetings; and manage GitHub projects and weekly tasks.
+> -   Produced and shared publicly facing materials on the project as required by the Bren School and/or client; organized and communicated team meetings; and managed GitHub projects and weekly tasks.
 >
 >     </blockquote>
 
-> -   Assess the compliance of property owners' execution of their approved land use plans (LUPs) and quantify historic deforestation rates in the Paraguayan Chaco.
+> -   Assessed land use plan compliance and deforestation rates in the Chaco using geospatial overlays in R, determining that 82% of properties exhibited land use compliance.
 
-> -   Create a law-based simulation tool in R to evaluate the effects of current and alternate laws on conserved forest area in the undeveloped Chaco region.
+> -   Constructed a simulation tool in R to estimate protected forest area under current and alternate laws in the undeveloped Chaco region.
 
-> -   Train a machine learning model to predict deforestation patterns in the undeveloped region of the Paraguayan Chaco, including variations in the laws governing LUPs.
+> -   Implemented a Random Forest machine learning model and Google Earth Engine workflow in Python for data acquisition and preprocessing, predicting future deforestation patterns and generating pixel-wise probabilities of future deforestation.
 
-> -   Develop an interactive R Shiny dashboard visualizing results.
+> -   Developed an interactive Shiny dashboard for stakeholders to visualize results, guiding informed decisions on forest conservation and land use policies.
 
 **Statistics for Environmental Data Science Final Project (11/22--12/22)**
 
@@ -50,23 +50,25 @@ title: "Resume"
 
 **Dust Emission Monitoring (1/20--8/22) Environmental Compliance Consulting \| Role: Project Manager \| Client: KPRS Construction Services Inc.**
 
-> -   Oversaw the installation and maintenance of field monitoring equipment and managed daily operations relating to dust monitoring in lead-impacted soil during the redevelopment of a former cement plant.
+> - Oversaw the installation and maintenance of field monitoring equipment and managed daily operations relating to dust monitoring in lead-impacted soil during the redevelopment of a former cement plant.
 
-> -   Compiled, wrangled, analyzed, and prepared reports of wind and dust data for weekly submissions to regulatory bodies, including the South Coast Air Quality Management District (SCAQMD) and the Department of Toxic Substances Control (DTSC).
+> - Compiled, wrangled, analyzed, and prepared reports of wind and dust data for weekly submissions to regulatory bodies, including the South Coast Air Quality Management District (SCAQMD) and the Department of Toxic Substances Control (DTSC).
 
-> -   Mitigated compliance issues and reduced particulate emissions to safeguard community health.
+> - Mitigated compliance issues and reduced particulate emissions to safeguard community health.
 
 ### Professional Experience
 
 **Citadel EHS, Glendale, CA Environmental Specialist (1/18--8/22 Full Time; 8/22--Present Part-Time)**
 
-> -   Manage wastewater surveillance projects for the presence of SARS-COV-2. Successfully identify the presence of COVID in wastewater and implement measures to reduce the risk of outbreaks.
+> - Created visualizations including figures and maps to enhance data representation and communicate findings.
 
-> -   Prepare Phase I Environmental Site Assessments and conduct Phase II Site Investigations, consisting of soil, soil vapor, groundwater, and indoor air sample collection.
+> - Oversee wastewater surveillance projects for the presence of SARS-COV-2. Successfully identify the presence of COVID in wastewater and implement measures to reduce the risk of outbreaks.
 
-> -   Manage radon surveying projects for various multi-family residential clients.
+> - Prepare Phase I Environmental Site Assessments and conduct Phase II Site Investigations, consisting of soil, soil vapor, groundwater, and indoor air sample collection.
 
-> -   Conduct hazardous material inventories, environmental audits, and inspections of facilities.
+> - Manage radon surveying projects for various multi-family residential clients.
+
+> - Conduct hazardous material inventories, environmental audits, and facility inspections.
 
 **UCSB, Santa Barbara, CA Course Reader (10/22-12/22 Part-Time)**
 
@@ -76,7 +78,7 @@ title: "Resume"
 
 **Cheadle Center for Biodiversity and Ecological Restoration (CCBER), Santa Barbara, CA Environmental Educator (4/17--6/17) \| Restoration Intern (3/16--6/16)**
 
-> -   Led fieldtrips, workshops, and created unique lesson plans to increase knowledge about environmental sciences for fifth graders.
+> -   Led weekly fieldtrips, workshops, and created unique lesson plans to increase knowledge about environmental sciences for fifth graders.
 
 > -   Monitored vegetation and wildlife, managed invasive species, collected vegetation samples for research, and worked on projects independently as well as with a team.
 
@@ -90,11 +92,13 @@ title: "Resume"
 
 ### Skills, Certifications, and Affiliations
 
--   **Languages:** R, Python, SQL Environments: Posit (RStudio), Visual Studio Code, JupyterLab
+-   **Languages/Software:** R, Python, SQL, Git/GitHub, QGIS, ArcGIS, Tableau
 
--   **Technical:** Git/GitHub, QGIS, Tableau, Data Visualization, Geospatial Analysis, Modeling
+-   **Environments:** Posit (RStudio), Visual Studio Code, JupyterLab
 
--   **Certifications/Degree:** Associate of Arts in Liberal Arts & Sciences: Mathematics and Science (May 2015), OSHA 40-Hour HAZWOPER, OSHA 10-Hour Construction Outreach
+-   **Degree/Certifications:** Associate of Arts in Liberal Arts & Sciences: Mathematics and Science (May 2015), OSHA 40-Hour HAZWOPER, OSHA 10-Hour Construction Outreach
+
+-   **Additional Experience:** Raised over $15,000 as a Campus Rep. (9/16-5/17) to aid Ecuador and Nicaragua locals
 
 -   **Affiliations:** California Association of Environmental Professionals (AEP)
 :::

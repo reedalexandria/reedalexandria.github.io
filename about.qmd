@@ -60,8 +60,8 @@ popup_content <- function(park_name, state, visited, photo) {
 # Create leaflet map
 m <- leaflet(data = np) |>
   addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") |>
-  addProviderTiles(providers$CartoDB.Positron, group = "CartoDB Positron") |>
-  addLayersControl(baseGroups = c("World Imagery", "CartoDB Positron"),
+  addProviderTiles(providers$Stamen.TonerLite, group = "Stamen.TonerLite") |>
+  addLayersControl(baseGroups = c("World Imagery", "Stamen.TonerLite"),
                    options = layersControlOptions(collapsed = FALSE))
 
 # Add circle markers with popups using lapply
@@ -89,29 +89,51 @@ m
 
 ## Countries
 
-While reaching every country might be too lofty of a goal, I am determined to visit every continent on earth. I have created this map to keep a record of my global explorations.
+While visiting every country might be too lofty of a goal, I am determined to visit every continent on earth. I have created this map to keep a record of my global explorations.
 
-**(map in progress)**
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
+library(sf)
+library(leaflet)
+
+# Country boundary data: https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/
+countries <- st_read("../data/ne_10m_admin_0_countries/ne_10m_admin_0_countries.shp")
+```
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-# library(tidyverse)
-# library(sf)
-# library(leaflet)
-# library(here)
-# library(readxl)
-# 
-# cities <- read_excel(here("data", "worldcities.xlsx"))
-# 
-# cities_sf <- cities |>
-#   st_as_sf(coords = c("lng", "lat"), crs = 4326)
-# 
-# cities_sf |>
-# leaflet() |>
-# addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") |>
-# addProviderTiles(providers$Stamen.TonerLite, group = "Toner Lite") |>
-# addLayersControl(baseGroups = c("World Imagery", "Toner Lite")) |>
-# addMarkers(label = cities$city)
+# Define colors for continents
+continent_colors <- c("Asia" = "red", 
+                      "Europe" = "green", 
+                      "Africa" = "purple",
+                      "North America" = "blue", 
+                      "South America" = "orange",
+                      "Australia" = "purple", 
+                      "Antarctica" = "gray") 
+
+
+# Assign colors based on continents
+countries$fill_color <- continent_colors[countries$CONTINENT]
+
+# Countries I have been to
+my_countries <- c("Peru", "France", "Nicaragua", "Canada", "Italy", "Vatican", "Denmark", "Ecuador", "Estonia", "Finland", "Japan", "Russia", "Germany", "Sweden", "Mexico", "Norway", "United States of America", "United Kingdom", "Netherlands")
+
+# Countries I have been to with geometries
+my_countries_geom <- countries[countries$NAME %in% my_countries, ]
+
+# Create leaflet map
+leaflet() |>
+  addProviderTiles("Stamen.TonerLite") |>
+  addPolygons(data = my_countries_geom,
+              fillColor = ~fill_color, fillOpacity = 0.5, color = "white", weight = 1,
+              popup = paste("<strong>Continent:</strong>", my_countries_geom$CONTINENT,
+                            "<br><strong>Country:</strong>", my_countries_geom$NAME),
+              labelOptions = labelOptions(
+                style = list("font-weight" = "normal", padding = "3px 8px"),
+                textsize = "15px",
+                direction = "auto"
+              )
+  )
 ```
+
 :::
 
 ### Hobbies
