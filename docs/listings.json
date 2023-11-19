@@ -1,14 +1,5 @@
 [
   {
-    "listing": "/blog_posts.html",
-    "items": [
-      "/posts/2022-12-31-rwrapped/index.html",
-      "/posts/2022-12-07-environmental-injustice-cafos/index.html",
-      "/posts/2022-12-03-cafo-presence /index.html",
-      "/posts/2022-11-14-houston/index.html"
-    ]
-  },
-  {
     "listing": "/blog.html",
     "items": [
       "/posts/2022-12-31-rwrapped/index.html",
