@@ -18,7 +18,7 @@
     "href": "resume.html#education",
     "title": "Resume",
     "section": "Education",
-    "text": "Education\n\n\nMaster of Environmental Data Science (June 2023) | Bren School of Environmental Science & Management – University of California, Santa Barbara (UCSB)\n\nHighlighted Coursework: Statistics for Environmental Data Science, Geospatial and Remote Sensing, Data Visualization and Communication, Machine Learning, Modeling Environmental Systems, Databases and Data Management\n\n\nLeadership/Involvement: Class Chair, Dean’s Advisory Council\n\nBachelor of Science in Environmental Studies (June 2017) | University of California, Santa Barbara (UCSB)\n\nHighlighted Coursework: Probability and Statistics, Solar and Renewable Energy Systems, Energy and the Environment, Principle Environmental Planning, Diet and Climate Change"
+    "text": "Education\n\n\nMaster of Environmental Data Science (June 2023) | Bren School of Environmental Science & Management – University of California, Santa Barbara (UCSB)\n\nHighlighted Coursework: Statistics for Environmental Data Science, Geospatial and Remote Sensing, Data Visualization and Communication, Machine Learning, Modeling Environmental Systems, Databases and Data Management\n\n\nLeadership/Involvement: Class Chair, Dean’s Advisory Council\n\nBachelor of Science in Environmental Studies (June 2017) | University of California, Santa Barbara (UCSB)\n\nHighlighted Coursework: Probability and Statistics, Solar and Renewable Energy Systems, Energy and the Environment, Principle Environmental Planning, Diet and Climate Change\n\nAssociate of Arts in Liberal Arts & Sciences: Mathematics and Science (May 2015)| College of the Canyons, Santa Clarita"
   },
   {
     "objectID": "resume.html#data-science-projects",
@@ -39,7 +39,7 @@
     "href": "resume.html#skills-certifications-and-affiliations",
     "title": "Resume",
     "section": "Skills, Certifications, and Affiliations",
-    "text": "Skills, Certifications, and Affiliations\n\n\n\nLanguages/Software: R, Python, SQL, Git/GitHub, QGIS, ArcGIS, Tableau\nEnvironments: Posit (RStudio), Visual Studio Code, JupyterLab\nDegree/Certifications: Associate of Arts in Liberal Arts & Sciences: Mathematics and Science (May 2015), OSHA 40-Hour HAZWOPER, OSHA 10-Hour Construction Outreach\nAdditional Experience: Raised over $15,000 as a Campus Rep. (9/16-5/17) to aid Ecuador and Nicaragua locals\nAffiliations: California Association of Environmental Professionals (AEP)"
+    "text": "Skills, Certifications, and Affiliations\n\n\n\nLanguages/Software: R, Python, SQL, Git/GitHub, QGIS, ArcGIS, Tableau\nEnvironments: Posit (RStudio), Visual Studio Code, JupyterLab\nCertifications: OSHA 40-Hour HAZWOPER, OSHA 10-Hour Construction Outreach, SCAQMD Rule 403 South Coast Air Basin Fugitive Dust Control Training\nAdditional Experience: Raised over $15,000 as a Campus Rep. (9/16-5/17) to aid Ecuador and Nicaragua locals\nAffiliations: California Association of Environmental Professionals (AEP)"
   },
   {
     "objectID": "posts/2022-11-14-houston/index.html",
@@ -214,7 +214,7 @@
     "href": "index.html#news-and-updates",
     "title": "Alexandria Reed",
     "section": "News and Updates",
-    "text": "News and Updates\n\nSeptember 2023: Working as an Environmental Data Scientist at Dudek\nJune 16, 2023: Graduated with Master of Environmental Data Science\nJune 2, 2023: Presented Capstone Project Informing Forest Conservation Regulations in Paraguay to the public. Check it out (2:58):"
+    "text": "News and Updates\n\nSeptember 2023: Working as an Environmental Data Scientist at Dudek\nJune 16, 2023: Graduated with Master of Environmental Data Science\nJune 2, 2023: Presented Capstone Project Informing Forest Conservation Regulations in Paraguay to the public. Check it out (2:58): YouTube Link"
   },
   {
     "objectID": "about.html",
@@ -243,5 +243,19 @@
     "title": "Blog",
     "section": "",
     "text": "R\n\n\n\nAfter being inspired by the popular end-of-year tradition, Spotify Wrapped, I decided to create my own #RStatsWrapped using .Rmd files from 2022.\n\n\n\nAlex Reed\n\n\nDec 31, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nEnvironmental Justice\n\n\n\nExploring the environmental impact, missing data implications, and injustices of CAFOs.\n\n\n\nAlex Reed\n\n\nDec 7, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nStatistical Analysis\n\n\nBinary Logistic Regression\n\n\n\nAnalyzing the relationship between poverty rates and CAFO presence.\n\n\n\nAlex Reed\n\n\nDec 3, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nR\n\n\nRemote Sensing\n\n\nSpatial Analysis\n\n\n\nAnalyzing remotely sensed data to determine the number of residents affected by the power outages caused by storms in February 2021.\n\n\n\nAlex Reed\n\n\nNov 14, 2022\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "Resume",
+    "section": "Skills",
+    "text": "Skills"
+  },
+  {
+    "objectID": "resume.html#certifications-and-affiliations",
+    "href": "resume.html#certifications-and-affiliations",
+    "title": "Resume",
+    "section": "Certifications and Affiliations",
+    "text": "Certifications and Affiliations\n\n\n\nCertifications: OSHA 40-Hour HAZWOPER, OSHA 10-Hour Construction Outreach, SCAQMD Rule 403 South Coast Air Basin Fugitive Dust Control Training\nAffiliations: California Association of Environmental Professionals (AEP)\nAdditional Experience: Raised over $15,000 as a Campus Representative (9/16-5/17) to aid locals in Ecuador and Nicaragua"
   }
 ]

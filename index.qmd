@@ -40,15 +40,22 @@ I am an ***Environmental Data Scientist***, passionate about exploring the inter
 <hr style="border: 1px solid #607744; background-color: #607744; height: 1px; margin: 2em 0;">
 
 <!-- ::: {#news} -->
-<!-- ```{=html} -->
-<!-- <style> -->
-<!-- #news { -->
-<!--   text-align: center; -->
-<!--   margin-top: 2em; /* Adjust this value to control the space between the two sections */ -->
-<!-- } -->
-<!-- </style> -->
-<!-- ``` -->
 
+```{=html}
+
+<style>
+
+#news {
+
+  text-align: center;
+
+  margin-top: 2em; /* Adjust this value to control the space between the two sections */
+
+}
+
+</style>
+
+```
 
 ::: blue-bg
 ::: lightgreen-bg
@@ -58,12 +65,14 @@ I am an ***Environmental Data Scientist***, passionate about exploring the inter
 
 -   June 16, 2023: Graduated with Master of Environmental Data Science
 
--   June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public. Check it out (2:58):
+-   June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public. Check it out (2:58): [YouTube Link](https://www.youtube.com/embed/3r3VleM6u3o)
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3r3VleM6u3o" frameborder="0" allowfullscreen>
 
 </iframe>
 :::
+
 
 <!-- :::  -->
 

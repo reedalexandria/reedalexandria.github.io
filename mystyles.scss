@@ -8,7 +8,7 @@
 $dark_blue:#124559;
 //$blue: #598392;
 $green: #607744;
-//$wine: #773344;
+$wine: #773344;
 $light_green: #d3dbd4;
 $white: #FBFEF9;
 
@@ -19,7 +19,7 @@ $white: #FBFEF9;
 $navbar-bg: $dark_blue;
 $navbar-fg: $light-green;
 $body-bg: $white;
-$link-color: $dark_blue;
+$link-color: $wine;
 //$fontcolor: $dark_blue;
 
 // Define a class for blockquotes - not currently using 
@@ -46,7 +46,7 @@ $my-font-size: 12;
 h1, h3 {
   letter-spacing: 4px;
   font-weight: 700;
-  color: $dark_blue;
+  color: $green;
 }
 
 .title {
@@ -68,7 +68,6 @@ h1, h3 {
   padding-left: 8px;
   border-radius: 20px;
   margin-bottom: 20px;
-  width: 100%; 
 }
 
 
@@ -87,10 +86,10 @@ h1, h3 {
   padding-bottom: 20px;
   padding-right: 20px;
   padding-left: 20px;
-  border-radius: 25px;
+  border-radius: 20px;
   margin-top: 20px;
+  width: 100%; 
 }
-
 
 .download-button {
     display: inline-block;
