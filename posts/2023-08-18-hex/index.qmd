@@ -1,0 +1,97 @@
+---
+title: "Elevating Your Project: Branding with Data Visualization in R"
+description: "Learn how to craft a color palette, design a unique hex sticker logo, and generate a QR code for efficient GitHub access."
+author: 
+  - name: Alex Reed
+date: 2023-08-18
+categories: [R]
+citation: 
+  url: https://reedalexandria.github.io/2023-08-18-hex
+image: pyforest_hex_sticker.png
+draft: true
+format:
+  html:
+    code-fold: true
+    code-summary: "show the code"
+    #code-overflow: wrap
+page-layout: article
+base_url: https://reedalexandria.github.io
+---
+
+### Load Packages
+
+```{r, message = FALSE}
+library(hexSticker)
+library(magick)
+library(sysfonts)
+library(qrcode)
+```
+
+### A little bit about the project
+
+My peers, Atahualpa Ayala, Dalila Lara, Guillermo Romero and I came up with the name PYFOREST as a team name for our capstone project: Informing Forest Conservation Regulations in Paraguay. 'PY' stands for Paraguay and that we would be using some Python in our analysis. 'Forest' underscores our focus on researching and conserving the Paraguayan Chaco, a diverse forest ecosystem.
+
+### Creating the logo
+
+An interesting project deserves an equally captivating logo. With this in mind, I took the lead in designing a logo that would encapsulate the essence of PYFOREST. Leveraging tools like I used Adobe Express and Canva to help come up with ideas for the logo. I obtained the free tree image on Adobe Express and saved it as a PNG. I then used `image_read` from the `magick` package to read the PNG from a file path. I then followed the [`hexSticker`](https://cran.r-project.org/web/packages/hexSticker/hexSticker.pdf) documentation to create the hexagon sticker. You can also type ??sticker in the console to view all of the arguments in R.
+
+```{r, results='hide', output = FALSE}
+# Read in tree image
+img <- image_read("/Users/alexreed/Documents/MEDS/Capstone/R/tree.png")
+
+# Sticker function
+sticker(subplot = img,
+        package="PYFOREST",
+        p_size=40,
+        p_y = 0.55,
+        p_color = "#FAF8F2",
+        p_family = "Aller_Rg",
+        s_x= 1,
+        s_y= 1.2,
+        s_width= 1.7,
+        s_height = 20,
+        filename="posts/2023-08-18-hex/pyforest_hex_sticker.png",
+        h_size = 0.5,
+        h_fill="#4B5F44",
+        h_color = "#354032",
+        url = "https://github.com/cp-PYFOREST",
+        u_size = 6,
+        u_color = "#FAF8F2",
+        u_x = 1,
+        u_y = 0.065,
+        dpi = 600) |>
+  print()
+```
+
+[![](/image/pyforest_hex_sticker.png){fig-align="center" width="800"}](https://github.com/cp-PYFOREST)
+
+## Creating a cohesive color palette
+
+In a collaborative effort, our team recognized the importance of maintaining visual coherence throughout our data visualizations. Since each team member was responsible for creating their own visualizations, we decided to establish a shared color palette. 
+
+https://coolors.co/
+```{r}
+pyforest_palette <- c("#4B5F43", "#AEBD93", "#F6AE2D", "#F26419")
+
+#Hunter Green, Sage, Hunyadi Yellow, Orange (Pantone)
+```
+
+
+## QR Code
+
+To enhance our project's accessibility, we created a QR code. By simply passing the relevant URL through the `qr_code()` function, we generated a QR code that provided easy access to our project's GitHub repository. We embedded the QR code on the final slide of our presentation, allowing audience members to quickly delve deeper into our research.
+
+<div>
+
+```{r, output=FALSE}
+url <- "https://github.com/cp-PYFOREST"
+qr <- qr_code(url)
+plot(qr)
+
+# Save the qr code as a svg
+generate_svg(qr, "filepath/qr.svg")
+```
+
+</div>
+
+[![Informing Forest Conservation Regulations in Paraguay Presentation](/image/presentation_qr.png){fig-align="center"}](https://github.com/cp-PYFOREST)

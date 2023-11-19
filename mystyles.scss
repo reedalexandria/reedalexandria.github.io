@@ -4,23 +4,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 // Colors 
-$indigo: #01161e;
+//$indigo: #01161e;
 $dark_blue:#124559;
-$blue: #598392;
+//$blue: #598392;
 $green: #607744;
-$wine: #773344;
+//$wine: #773344;
 $light_green: #d3dbd4;
-$link-hover-color: $green;
+$white: #FBFEF9;
 
-// light-green: #bdc9bf;
 
 //#cfdbd5
 
 // Base Document Colors
 $navbar-bg: $dark_blue;
-$body-bg: $light_green;
-$link-color: $green;
-//$fontcolor: $wine;
+$navbar-fg: $light-green;
+$body-bg: $white;
+$link-color: $dark_blue;
+//$fontcolor: $dark_blue;
 
 // Define a class for blockquotes - not currently using 
 .blockquote {
@@ -46,7 +46,7 @@ $my-font-size: 12;
 h1, h3 {
   letter-spacing: 4px;
   font-weight: 700;
-  color: $green;
+  color: $dark_blue;
 }
 
 .title {
@@ -59,6 +59,48 @@ h1, h3 {
   //color: $wine;
 }
 
+
+.lightgreen-bg {
+  background-color: $light_green;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  width: 100%; 
+}
+
+
+.green-bg {
+  background-color: $green;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 100%; 
+}
+
+
+.blue-bg {
+  background-color: $dark_blue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #124559; /* Button color */
+    color: white; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 
 
 

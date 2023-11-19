@@ -21,8 +21,8 @@ website:
         text: About
       - href: resume.qmd #resume/resume.pdf
         text: Resume
-      - href: blog_posts.qmd
-        text: Blog Posts
+      - href: blog.qmd
+        text: Blog
   page-footer: 
     background: "#124559"
     left: "Copyright 2022, Alexandria Reed"

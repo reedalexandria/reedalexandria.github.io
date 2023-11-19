@@ -29,34 +29,48 @@ about:
 #   fields: [image, date, title]
 ---
 
+::: green-bg
+::: lightgreen-bg
 I am an ***Environmental Data Scientist***, passionate about exploring the intersection of environmental science and data analytics. Welcome to my blog, where I share my journey, interests, and the exciting projects I've worked on.
+:::
+:::
 
 <!-- Green line -->
 
 <hr style="border: 1px solid #607744; background-color: #607744; height: 1px; margin: 2em 0;">
 
-::: {#news}
-```{=html}
-<style>
-#news {
-  text-align: left;
-  margin-top: 2em; /* Adjust this value to control the space between the two sections */
-}
-</style>
-```
-### [News and Updates]{.underline}
+<!-- ::: {#news} -->
+<!-- ```{=html} -->
+<!-- <style> -->
+<!-- #news { -->
+<!--   text-align: center; -->
+<!--   margin-top: 2em; /* Adjust this value to control the space between the two sections */ -->
+<!-- } -->
+<!-- </style> -->
+<!-- ``` -->
 
--   **Currently seeking data science job opportunities!**
+
+::: blue-bg
+::: lightgreen-bg
+## [News and Updates]{.underline}
+
+-   September 2023: Working as an Environmental Data Scientist at [Dudek](https://dudek.com/)
 
 -   June 16, 2023: Graduated with Master of Environmental Data Science
 
--   June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public. Check it out (2:58): 
+-   June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public. Check it out (2:58):
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3r3VleM6u3o" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3r3VleM6u3o" frameborder="0" allowfullscreen>
 
+</iframe>
+:::
+
+<!-- :::  -->
 
 <!-- {{< video https://www.youtube.com/watch?v=3r3VleM6u3o -->
+
 <!--     title="2023 MEDS Capstone Project Presentations" -->
+
 <!--     aspect-ratio="16x9" >}} -->
 :::
 

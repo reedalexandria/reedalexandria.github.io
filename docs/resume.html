@@ -83,7 +83,7 @@ ul.task-list{list-style: none;}
     <a class="nav-link active" href="./resume.html" aria-current="page">Resume</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog_posts.html">Blog Posts</a>
+    <a class="nav-link" href="./blog.html">Blog</a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -113,7 +113,17 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary-of-qualifications" id="toc-summary-of-qualifications" class="nav-link active" data-scroll-target="#summary-of-qualifications">Summary of Qualifications</a></li>
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
+  <li><a href="#data-science-projects" id="toc-data-science-projects" class="nav-link" data-scroll-target="#data-science-projects">Data Science Projects</a></li>
+  <li><a href="#professional-experience" id="toc-professional-experience" class="nav-link" data-scroll-target="#professional-experience">Professional Experience</a></li>
+  <li><a href="#skills-certifications-and-affiliations" id="toc-skills-certifications-and-affiliations" class="nav-link" data-scroll-target="#skills-certifications-and-affiliations">Skills, Certifications, and Affiliations</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -134,19 +144,54 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p><a href="resume.pdf" style="color: #124559">Download Resume</a></p>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Summary of Qualifications</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Education</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Data Science Projects</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Professional Experience</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Skills, Certifications, and Affiliations</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="resume.pdf" class="download-button">Download Resume</a></p>
+<!-- #::: panel-tabset -->
+<!-- ## Skills -->
+<!-- ```{r, echo=FALSE,message=FALSE, warning=FALSE} -->
+<!-- # Creating the DataFrame -->
+<!-- data <- data.frame( -->
+<!--   Skill = factor(c('R', 'Project Management', 'Data Visualization', 'Geospatial Analysis', 'QGIS'), -->
+<!--                  levels = c('R', 'Project Management', 'Data Visualization', 'Geospatial Analysis', 'QGIS')), -->
+<!--   Rating = c(5, 5, 4, 4, 3) -->
+<!-- ) -->
+<!-- # Reversing the order of factor levels to change the bar order -->
+<!-- data$Skill <- factor(data$Skill, levels = rev(levels(data$Skill))) -->
+<!-- # Bar plot with coord_flip (horizontal) -->
+<!-- library(ggplot2) -->
+<!-- ggplot(data, aes(x = Skill, y = Rating)) + -->
+<!--   geom_bar(stat = 'identity', fill = '#124559') + -->
+<!--   coord_flip() + -->
+<!--   labs(x = '', y = '', title = '') + -->
+<!--   theme_minimal() + -->
+<!--   theme( -->
+<!--     axis.ticks = element_blank(), -->
+<!--     panel.grid.major.y = element_blank(), -->
+<!--     panel.grid.minor.y = element_blank(), -->
+<!--     panel.grid.major.x = element_blank(), -->
+<!--     panel.grid.minor.x = element_blank(), -->
+<!--     axis.text.y = element_text(size = 12), -->
+<!--     axis.text.x = element_text(size = 14), -->
+<!--     panel.border = element_blank(),  # Remove panel border -->
+<!--     plot.background = element_rect(fill = '#FBFEF9', color = NA)  -->
+<!--   )  -->
+<!-- ``` -->
+<section id="summary-of-qualifications" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-qualifications">Summary of Qualifications</h2>
+<div class="green-bg">
+<div class="lightgreen-bg">
 <ul>
-<li>Data-driven environmental specialist with a Master of Environmental Data Science (expected June 2023) and a Bachelor of Science in Environmental Studies.</li>
+<li>Data-driven environmental specialist with a Master of Environmental Data Science and a Bachelor of Science in Environmental Studies.</li>
 <li>Extensive experience in the environmental sector, including roles with non-profit organizations, public research universities, and consulting companies.</li>
 <li>Experienced in collaborating with diverse teams on data-driven research projects to develop innovative solutions to complex environmental challenges.</li>
 <li>Skilled in programming languages such as R and Python, with digital literacy skills in GitHub, Git, Excel, PowerPoint, and QGIS.</li>
 </ul>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+</div>
+</section>
+<section id="education" class="level2">
+<h2 class="anchored" data-anchor-id="education">Education</h2>
+<div class="green-bg">
+<div class="lightgreen-bg">
 <p><strong>Master of Environmental Data Science (June 2023) | Bren School of Environmental Science &amp; Management – University of California, Santa Barbara (UCSB)</strong></p>
 <blockquote class="blockquote">
 <p><strong>Highlighted Coursework:</strong> Statistics for Environmental Data Science, Geospatial and Remote Sensing, Data Visualization and Communication, Machine Learning, Modeling Environmental Systems, Databases and Data Management</p>
@@ -159,31 +204,19 @@ ul.task-list{list-style: none;}
 <p><strong>Highlighted Coursework:</strong> Probability and Statistics, Solar and Renewable Energy Systems, Energy and the Environment, Principle Environmental Planning, Diet and Climate Change</p>
 </blockquote>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+</div>
+</section>
+<section id="data-science-projects" class="level2">
+<h2 class="anchored" data-anchor-id="data-science-projects">Data Science Projects</h2>
+<div class="green-bg">
+<div class="lightgreen-bg">
 <p><strong>Data Science Master’s Capstone Project (1/23–Present) |Informing Forest Conservation Regulations in Paraguay | Clients: Dr.&nbsp;Robert Heilmayr, UCSB; Paraguay’s National Forestry Institute (INFONA)</strong></p>
 <blockquote class="blockquote">
 <ul>
-<li><p>Produced and shared publicly facing materials on the project as required by the Bren School and/or client; organized and communicated team meetings; and managed GitHub projects and weekly tasks.</p>
-</li></ul></blockquote>
-
-
-<blockquote class="blockquote">
-<ul>
+<li>Produced and shared publicly facing materials on the project as required by the Bren School and/or client; organized and communicated team meetings; and managed GitHub projects and weekly tasks.</li>
 <li>Assessed land use plan compliance and deforestation rates in the Chaco using geospatial overlays in R, determining that 82% of properties exhibited land use compliance.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Constructed a simulation tool in R to estimate protected forest area under current and alternate laws in the undeveloped Chaco region.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Implemented a Random Forest machine learning model and Google Earth Engine workflow in Python for data acquisition and preprocessing, predicting future deforestation patterns and generating pixel-wise probabilities of future deforestation.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Developed an interactive Shiny dashboard for stakeholders to visualize results, guiding informed decisions on forest conservation and land use policies.</li>
 </ul>
 </blockquote>
@@ -191,15 +224,7 @@ ul.task-list{list-style: none;}
 <blockquote class="blockquote">
 <ul>
 <li>Investigated the relationship between poverty rates and the probability of concentrated animal feeding operation (CAFO) presence in California.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Used a generalized linear model (GLM) to analyze relevant data and found a statistically significant relationship between poverty rates and the presence of CAFOs in California.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Results provided evidence that CAFO pollution disproportionately affects people with high poverty rates in California, raising environmental justice issues.</li>
 </ul>
 </blockquote>
@@ -207,43 +232,32 @@ ul.task-list{list-style: none;}
 <blockquote class="blockquote">
 <ul>
 <li>Oversaw the installation and maintenance of field monitoring equipment and managed daily operations relating to dust monitoring in lead-impacted soil during the redevelopment of a former cement plant.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Compiled, wrangled, analyzed, and prepared reports of wind and dust data for weekly submissions to regulatory bodies, including the South Coast Air Quality Management District (SCAQMD) and the Department of Toxic Substances Control (DTSC).</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Mitigated compliance issues and reduced particulate emissions to safeguard community health.</li>
 </ul>
 </blockquote>
 </div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<p><strong>Citadel EHS, Glendale, CA Environmental Specialist (1/18–8/22 Full Time; 8/22–Present Part-Time)</strong></p>
+</div>
+</section>
+<section id="professional-experience" class="level2">
+<h2 class="anchored" data-anchor-id="professional-experience">Professional Experience</h2>
+<div class="green-bg">
+<div class="lightgreen-bg">
+<p><strong>Dudek, Pasadena, CA Environmental Data Scientist (9/23–Present)</strong></p>
+<blockquote class="blockquote">
+<ul>
+<li>Lead the data-driven development of comprehensive Urban Forestry Management plans.</li>
+<li>Utilize Geographic Information System (GIS) tools to analyze spatial patterns of urban trees and optimize planting locations.</li>
+<li>Translate complex data into visually appealing and informative charts, graphs, and dashboards for stakeholders and decision-makers.</li>
+</ul>
+</blockquote>
+<p><strong>Citadel EHS, Glendale, CA Environmental Specialist (1/18–8/22 Full Time; 8/22–9/23 Part-Time)</strong></p>
 <blockquote class="blockquote">
 <ul>
 <li>Created visualizations including figures and maps to enhance data representation and communicate findings.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Oversee wastewater surveillance projects for the presence of SARS-COV-2. Successfully identify the presence of COVID in wastewater and implement measures to reduce the risk of outbreaks.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Prepare Phase I Environmental Site Assessments and conduct Phase II Site Investigations, consisting of soil, soil vapor, groundwater, and indoor air sample collection.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Manage radon surveying projects for various multi-family residential clients.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Conduct hazardous material inventories, environmental audits, and facility inspections.</li>
 </ul>
 </blockquote>
@@ -251,10 +265,6 @@ ul.task-list{list-style: none;}
 <blockquote class="blockquote">
 <ul>
 <li>Graded essays and assignments submitted by undergraduate students enrolled in ENV S 193ST Sea Turtle Conservation &amp; Management course.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Posted grades and provided constructive feedback on the online learning management system in a timely and accurate manner to help students improve their writing and critical thinking skills.</li>
 </ul>
 </blockquote>
@@ -262,15 +272,7 @@ ul.task-list{list-style: none;}
 <blockquote class="blockquote">
 <ul>
 <li>Led weekly fieldtrips, workshops, and created unique lesson plans to increase knowledge about environmental sciences for fifth graders.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Monitored vegetation and wildlife, managed invasive species, collected vegetation samples for research, and worked on projects independently as well as with a team.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Managed and led the restoration of a portion of a UCSB-owned wetland.</li>
 </ul>
 </blockquote>
@@ -278,15 +280,16 @@ ul.task-list{list-style: none;}
 <blockquote class="blockquote">
 <ul>
 <li>Coordinated and led a group of peers to be a part of international reforestation and sustainable agriculture projects.</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<ul>
 <li>Organized fundraising events, raising over $15,000, to assist locals in Ecuador and Nicaragua.</li>
 </ul>
 </blockquote>
 </div>
-<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+</div>
+</section>
+<section id="skills-certifications-and-affiliations" class="level2">
+<h2 class="anchored" data-anchor-id="skills-certifications-and-affiliations">Skills, Certifications, and Affiliations</h2>
+<div class="green-bg">
+<div class="lightgreen-bg">
 <ul>
 <li><p><strong>Languages/Software:</strong> R, Python, SQL, Git/GitHub, QGIS, ArcGIS, Tableau</p></li>
 <li><p><strong>Environments:</strong> Posit (RStudio), Visual Studio Code, JupyterLab</p></li>
@@ -296,9 +299,9 @@ ul.task-list{list-style: none;}
 </ul>
 </div>
 </div>
-</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

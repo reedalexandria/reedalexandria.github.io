@@ -3,20 +3,23 @@ title: "About"
 subtitle: "Welcome! Here, you'll find a glimpse into my interests, passions, and adventures."
 ---
 
-::: panel-tabset
-### About Me
+<!-- ::: panel-tabset -->
 
-I recently graduated from the Master of Environmental Data Science program at the Bren School of Environmental Science & Management at UC Santa Barbara (UCSB). My current interests lie in Environmental Policy, Forestry Management, Biodiversity Conservation, Sustainable Food Systems, Environmental Education and Communication, and Data Visualization and Storytelling.
+## About Me
 
-Prior to my master's studies, I completed my undergraduate studies at UCSB in 2017, graduating with a Bachelor of Science in Environmental Studies. During my time as an undergraduate, I had the opportunity to lead reforestation and sustainable agriculture projects in South America for a nonprofit organization
+::: blue-bg
+::: lightgreen-bg
+I hold a **Master of Environmental Data Science** from UCSB's Bren School of Environmental Science & Management. My interests encompass ***Forestry Management, Environmental Policy, Biodiversity Conservation, Sustainable Food Systems, Communication**,* and ***Data Visualization.***
 
-After graduating, I worked as an Environmental Specialist for an Environmental, Health, Safety, and Sustainability consulting company. In this role, I evaluated and identified environmental impacts, and I recommended and implemented solutions for clients in both the private and public sectors.
+Previously, I completed my ***Bachelor of Science in Environmental Studies*** at UCSB, engaging in impactful projects focusing on ***reforestation*** and ***sustainable agriculture*** in South America for a nonprofit organization.
 
-Throughout my career as an environmental consultant, I witnessed the disproportionate environmental impacts in marginalized communities, which highlighted the urgency for reproducible data science and visualization skills in developing effective solutions to environmental challenges.
+Following my academic journey, I transitioned into the role of an ***Environmental Specialist*** for a consulting company. Here, I **a**ssessed environmental impacts, proposed solutions for clients across various sectors, and observed disparities in environmental effects on marginalized communities, emphasizing the ***necessity of reproducible data science*** in addressing these issues.
 
-My ultimate goal is to leverage data science tools to derive data-driven solutions for complex environmental problems and to effectively communicate this information to diverse audiences, making it accessible and driving positive change.
+My ***goal*** remains leveraging data science to tackle environmental challenges and effectively communicating insights to drive positive change.
+:::
+:::
 
-### Travels
+## Travels
 
 ::: panel-tabset
 ## National Parks
@@ -87,74 +90,107 @@ m <- m |> addLegend("bottomright",
 m
 ```
 
-## Countries
+<!-- ## Countries -->
 
-While visiting every country might be too lofty of a goal, I am determined to visit every continent on earth. I have created this map to keep a record of my global explorations.
+<!-- While visiting every country might be too lofty of a goal, I am determined to visit every continent on earth. I have created this map to keep a record of my global explorations. -->
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
-library(sf)
-library(leaflet)
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'} -->
 
-# Country boundary data: https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/
-countries <- st_read("../data/ne_10m_admin_0_countries/ne_10m_admin_0_countries.shp")
-```
+<!-- library(sf) -->
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-# Define colors for continents
-continent_colors <- c("Asia" = "red", 
-                      "Europe" = "green", 
-                      "Africa" = "purple",
-                      "North America" = "blue", 
-                      "South America" = "orange",
-                      "Australia" = "purple", 
-                      "Antarctica" = "gray") 
+<!-- library(leaflet) -->
 
+<!-- # Country boundary data: https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/ -->
 
-# Assign colors based on continents
-countries$fill_color <- continent_colors[countries$CONTINENT]
+<!-- countries <- st_read("../data/ne_10m_admin_0_countries/ne_10m_admin_0_countries.shp") -->
 
-# Countries I have been to
-my_countries <- c("Peru", "France", "Nicaragua", "Canada", "Italy", "Vatican", "Denmark", "Ecuador", "Estonia", "Finland", "Japan", "Russia", "Germany", "Sweden", "Mexico", "Norway", "United States of America", "United Kingdom", "Netherlands")
+<!-- ``` -->
 
-# Countries I have been to with geometries
-my_countries_geom <- countries[countries$NAME %in% my_countries, ]
+<!-- ```{r, echo=FALSE, message=FALSE, warning=FALSE} -->
 
-# Create leaflet map
-leaflet() |>
-  addProviderTiles("Stamen.TonerLite") |>
-  addPolygons(data = my_countries_geom,
-              fillColor = ~fill_color, fillOpacity = 0.5, color = "white", weight = 1,
-              popup = paste("<strong>Continent:</strong>", my_countries_geom$CONTINENT,
-                            "<br><strong>Country:</strong>", my_countries_geom$NAME),
-              labelOptions = labelOptions(
-                style = list("font-weight" = "normal", padding = "3px 8px"),
-                textsize = "15px",
-                direction = "auto"
-              )
-  )
-```
+<!-- # Define colors for continents -->
 
+<!-- continent_colors <- c("Asia" = "red",  -->
+
+<!--                       "Europe" = "green",  -->
+
+<!--                       "Africa" = "purple", -->
+
+<!--                       "North America" = "blue",  -->
+
+<!--                       "South America" = "orange", -->
+
+<!--                       "Australia" = "purple",  -->
+
+<!--                       "Antarctica" = "gray")  -->
+
+<!-- # Assign colors based on continents -->
+
+<!-- countries$fill_color <- continent_colors[countries$CONTINENT] -->
+
+<!-- # Countries I have been to -->
+
+<!-- my_countries <- c("Peru", "France", "Nicaragua", "Canada", "Italy", "Vatican", "Denmark", "Ecuador", "Estonia", "Finland", "Japan", "Russia", "Germany", "Sweden", "Mexico", "Norway", "United States of America", "United Kingdom", "Netherlands") -->
+
+<!-- # Countries I have been to with geometries -->
+
+<!-- my_countries_geom <- countries[countries$NAME %in% my_countries, ] -->
+
+<!-- # Create leaflet map -->
+
+<!-- leaflet() |> -->
+
+<!--   addProviderTiles("Stamen.TonerLite") |> -->
+
+<!--   addPolygons(data = my_countries_geom, -->
+
+<!--               fillColor = ~fill_color, fillOpacity = 0.5, color = "white", weight = 1, -->
+
+<!--               popup = paste("<strong>Continent:</strong>", my_countries_geom$CONTINENT, -->
+
+<!--                             "<br><strong>Country:</strong>", my_countries_geom$NAME), -->
+
+<!--               labelOptions = labelOptions( -->
+
+<!--                 style = list("font-weight" = "normal", padding = "3px 8px"), -->
+
+<!--                 textsize = "15px", -->
+
+<!--                 direction = "auto" -->
+
+<!--               ) -->
+
+<!--   ) -->
+
+<!-- ``` -->
 :::
 
-### Hobbies
+## Hobbies
 
-During my free time, I enjoy being outdoors and participating in various activities such as playing soccer or volleyball, running, hiking, and camping with friends. I'm also passionate about health and wellness, and like to stay informed and inspired by reading books on nutrition and related topics. Prioritizing my physical health is important to me, so I also make time for regular workouts. Cooking and experimenting with plant-based recipes is another hobby I enjoy. My hobbies help me maintain a healthy work-life balance and bring joy to my everyday routine.
+During my free time, I enjoy being outdoors and participating in various activities such as playing soccer or volleyball, running, hiking, and camping with friends. Cooking and experimenting with plant-based recipes is another hobby I enjoy. My hobbies help me maintain a healthy work-life balance and bring joy to my everyday routine.
 
 ::: {layout-ncol="2"}
+::: green-bg
 ![](image/soccer.png)
+:::
 
+::: blue-bg
 ![](image/friends.png)
+:::
 
+::: blue-bg
 ![](image/yoga.png)
+:::
 
+::: green-bg
 ![](image/skydive.png)
+:::
 
-![](image/food.png)
-
-![](image/volleyball.png)
-
+::: green-bg
 ![](image/running.png)
+:::
 
+::: blue-bg
 ![](image/kayak.png)
 :::
 :::
