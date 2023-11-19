@@ -185,7 +185,5 @@ ggplot(data1_long, aes(x = Rating, y = Skill, fill = !is.na(Value))) +
 -   **Certifications:** OSHA 40-Hour HAZWOPER, OSHA 10-Hour Construction Outreach, SCAQMD Rule 403 South Coast Air Basin Fugitive Dust Control Training
 
 -   **Affiliations:** California Association of Environmental Professionals (AEP)
-
--   **Additional Experience:** Raised over \$15,000 as a Campus Representative (9/16-5/17) to aid locals in Ecuador and Nicaragua
 :::
 :::
