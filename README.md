@@ -4,7 +4,7 @@
 
 #### Table of Contents
 
-- [Home](https://reedalexandria.github.io/))
+- [Home](https://reedalexandria.github.io/)
 
 - [About](https://reedalexandria.github.io/about.html)
   
