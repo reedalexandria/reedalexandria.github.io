@@ -41,8 +41,6 @@ title: "Resume"
 
 ```
 
-
-
 ## Summary of Qualifications
 
 ::: green-bg
@@ -55,6 +53,7 @@ title: "Resume"
 :::
 
 ## Skills
+
 ::: green-bg
 ::: lightgreen-bg
 ```{r, echo=FALSE,message=FALSE, warning=FALSE}
@@ -96,7 +95,6 @@ ggplot(data1_long, aes(x = Rating, y = Skill, fill = !is.na(Value))) +
 ```
 :::
 :::
-
 
 ## Education
 

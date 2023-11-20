@@ -1,6 +1,6 @@
 ---
-title: "Elevating Your Project: Branding with Data Visualization in R"
-description: "Learn how to craft a color palette, design a unique hex sticker logo, and generate a QR code for efficient GitHub access."
+title: "Elevating Your Project: Branding using R"
+description: "Learn how design a unique hex sticker logo, to craft a color palette, and generate a QR code for efficient GitHub access."
 author: 
   - name: Alex Reed
 date: 2023-08-18
@@ -8,7 +8,7 @@ categories: [R]
 citation: 
   url: https://reedalexandria.github.io/2023-08-18-hex
 image: pyforest_hex_sticker.png
-draft: true
+draft: false
 format:
   html:
     code-fold: true
@@ -18,7 +18,7 @@ page-layout: article
 base_url: https://reedalexandria.github.io
 ---
 
-### Load Packages
+## Load Packages
 
 ```{r, message = FALSE}
 library(hexSticker)
@@ -27,11 +27,11 @@ library(sysfonts)
 library(qrcode)
 ```
 
-### A little bit about the project
+## A little bit about the project
 
 My peers, Atahualpa Ayala, Dalila Lara, Guillermo Romero and I came up with the name PYFOREST as a team name for our capstone project: Informing Forest Conservation Regulations in Paraguay. 'PY' stands for Paraguay and that we would be using some Python in our analysis. 'Forest' underscores our focus on researching and conserving the Paraguayan Chaco, a diverse forest ecosystem.
 
-### Creating the logo
+## Creating the logo
 
 An interesting project deserves an equally captivating logo. With this in mind, I took the lead in designing a logo that would encapsulate the essence of PYFOREST. Leveraging tools like I used Adobe Express and Canva to help come up with ideas for the logo. I obtained the free tree image on Adobe Express and saved it as a PNG. I then used `image_read` from the `magick` package to read the PNG from a file path. I then followed the [`hexSticker`](https://cran.r-project.org/web/packages/hexSticker/hexSticker.pdf) documentation to create the hexagon sticker. You can also type ??sticker in the console to view all of the arguments in R.
 
@@ -67,15 +67,39 @@ sticker(subplot = img,
 
 ## Creating a cohesive color palette
 
-In a collaborative effort, our team recognized the importance of maintaining visual coherence throughout our data visualizations. Since each team member was responsible for creating their own visualizations, we decided to establish a shared color palette. 
+In a collaborative effort, our team recognized the importance of maintaining visual coherence throughout our data visualizations. Since each team member was responsible for creating their own visualizations, we decided to establish a shared color palette. We used [coolors.com](https://coolors.co/) to help us create our color palette. 
 
-https://coolors.co/
 ```{r}
-pyforest_palette <- c("#4B5F43", "#AEBD93", "#F6AE2D", "#F26419")
+library(ggplot2)
 
-#Hunter Green, Sage, Hunyadi Yellow, Orange (Pantone)
+# PYFOREST color palette
+pyforest_palette <- c("#2f4858", "#a7c7d8", "#4B5F43", "#AEBD93", "#F6AE2D", "#F26419")
+# Charcoal, Columbia Blue, Hunter Green, Sage, Hunyadi Yellow, Orange (Pantone)
+palette_names <- c("Charcoal", "Columbia Blue", "Hunter Green", "Sage", "Hunyadi Yellow", "Orange (Pantone)")
+
+palette_data <- data.frame(Color = factor(palette_names, levels = rev(palette_names)), Value = pyforest_palette)
+
+# Bar plot displaying the colors
+ggplot(palette_data, aes(x = Color, y = 1, fill = Value)) +
+  geom_bar(stat = "identity") +
+  scale_fill_identity() +
+  theme_minimal() +
+  labs(x = NULL, y = NULL, title = "PYFOREST Palette") +
+  coord_flip() +
+  theme(
+    plot.title = element_text(hjust = 0.5, 
+                              size = 16),
+    axis.ticks = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    axis.text.y = element_text(size = 12),
+    axis.text.x = element_blank(),
+    panel.border = element_blank(),  
+    plot.background = element_rect(fill = '#FBFEF9', color = NA))
+
 ```
-
 
 ## QR Code
 

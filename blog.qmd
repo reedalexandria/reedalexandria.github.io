@@ -1,8 +1,44 @@
 ---
-title: "Blog"
-listing: 
-  type: grid
-  contents: posts
-  sort: "date desc"
-  categories: true
+title: ""
+title-block-banner: true
+page-layout: full
+description-meta: "Welcome to my blog, I’m thrilled to welcome you! Here, you will find a collection of articles on a wide variety of topics. Take a look around and let me know what you think!"
+
+listing:
+  - id: posts_2023
+    contents: 
+      - "2023-08-18-hex/index.qmd"
+    sort: "date desc"
+    template: html/blog/listing.ejs
+    categories: true
+  - id: posts_2022
+    contents: 
+      - "2022-11-14-houston/index.qmd"
+      - "2022-12-03-cafo-presence/index.qmd"
+      - "2022-12-07-environmental-injustice-cafos/index.qmd"
+      - "2022-12-31-rwrapped/index.qmd"
+    sort: "date desc"
+    template: html/blog/listing.ejs
+  
+toc-title: Year
+toc-location: right
+date-format: "MMMM D, YYYY"
+image: ""
+code-tools: false
+comments: false
 ---
+
+#### Welcome to my blog! You will find a collection of articles on a wide variety of topics relating to my journey with data science. I hope you will find something of interest.
+
+## 2023
+
+:::{#posts_2023}
+
+:::
+
+## 2022
+
+:::{#posts_2022}
+
+:::
+

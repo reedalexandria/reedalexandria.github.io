@@ -13,7 +13,7 @@ format:
     code-fold: true
     code-summary: "Show the code"
 base_url: https://reedalexandria.github.io
-title-block-banner-color: "#aec3b0"
+# title-block-banner-color: "#aec3b0"
 ---
 
 ## Purpose

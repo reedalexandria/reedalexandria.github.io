@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Welcome to my blog, I’m thrilled to welcome you! Here, you will find a collection of articles on a wide variety of topics. Take a look around and let me know what you think!">
 
-<title>Alexandria Reed - Blog</title>
+<title>Alexandria Reed -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,20 +60,48 @@ ul.task-list{list-style: none;}
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-posts_2023 .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-freeze','listing-title-block-banner','listing-title-block-banner-color','listing-title','listing-description','listing-author','listing-date','listing-categories','listing-citation','listing-image','listing-draft','listing-format','listing-page-layout','listing-base_url','listing-path','listing-filename','listing-file-modified','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-freeze","listing-title-block-banner","listing-title-block-banner-color","listing-title","listing-description","listing-author","listing-date","listing-categories","listing-citation","listing-image","listing-draft","listing-format","listing-page-layout","listing-base_url","listing-path","listing-filename","listing-file-modified","listing-reading-time"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-posts_2023'] = new List('listing-posts_2023', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-posts_2022 .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-freeze','listing-title-block-banner','listing-title-block-banner-color','listing-title','listing-description','listing-author','listing-date','listing-categories','listing-image','listing-draft','listing-format','listing-base_url','listing-path','listing-filename','listing-file-modified','listing-reading-time','listing-citation','listing-page-layout',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] }],
+      
+      searchColumns: ["listing-freeze","listing-title-block-banner","listing-title-block-banner-color","listing-title","listing-description","listing-author","listing-date","listing-categories","listing-image","listing-draft","listing-format","listing-base_url","listing-path","listing-filename","listing-file-modified","listing-reading-time","listing-citation","listing-page-layout"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-posts_2022'] = new List('listing-posts_2022', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -141,174 +170,149 @@ ul.task-list{list-style: none;}
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Binary Logistic Regression">Binary Logistic Regression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Environmental Justice">Environmental Justice <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Remote Sensing">Remote Sensing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Spatial Analysis">Spatial Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistical Analysis">Statistical Analysis <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Year</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">2023</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2022</a></li>
+  </ul>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Binary Logistic Regression">Binary Logistic Regression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Environmental Justice">Environmental Justice <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Remote Sensing">Remote Sensing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Spatial Analysis">Spatial Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Statistical Analysis">Statistical Analysis <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Blog</h1>
-</div>
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-    
-  </div>
-  
-
-</header>
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="R" data-listing-date-sort="1672473600000" data-listing-file-modified-sort="1680154271215" data-listing-reading-time-sort="8.245">
-<a href="./posts/2022-12-31-rwrapped/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2022-12-31-rwrapped/album_cover.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-R Stats Wrapped
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-</div>
-<div class="card-text listing-description">
-After being inspired by the popular end-of-year tradition, Spotify Wrapped, I decided to create my own #RStatsWrapped using .Rmd files from 2022.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alex Reed
-</div>
-<div class="listing-date">
-Dec 31, 2022
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="Environmental Justice" data-listing-date-sort="1670400000000" data-listing-file-modified-sort="1677342932911" data-listing-reading-time-sort="4.24">
-<a href="./posts/2022-12-07-environmental-injustice-cafos/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2022-12-07-environmental-injustice-cafos/CAFOs.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-CAFOs and Environmental Justice
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Environmental Justice'); return false;">
-Environmental Justice
-</div>
-</div>
-<div class="card-text listing-description">
-Exploring the environmental impact, missing data implications, and injustices of CAFOs.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alex Reed
-</div>
-<div class="listing-date">
-Dec 7, 2022
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="R,Statistical Analysis,Binary Logistic Regression" data-listing-date-sort="1670054400000" data-listing-file-modified-sort="1691621317218" data-listing-reading-time-sort="11.005">
-<a href="./posts/2022-12-03-cafo-presence /index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2022-12-03-cafo-presence /cows.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Predicting CAFO presence in California based on poverty rates
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Statistical Analysis'); return false;">
-Statistical Analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Binary Logistic Regression'); return false;">
-Binary Logistic Regression
-</div>
-</div>
-<div class="card-text listing-description">
-Analyzing the relationship between poverty rates and CAFO presence.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alex Reed
-</div>
-<div class="listing-date">
-Dec 3, 2022
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="R,Remote Sensing,Spatial Analysis" data-listing-date-sort="1668412800000" data-listing-file-modified-sort="1677342892981" data-listing-reading-time-sort="6.11">
-<a href="./posts/2022-11-14-houston/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./posts/2022-11-14-houston/census_income.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Houston Power Crisis Analysis
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Remote Sensing'); return false;">
-Remote Sensing
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Spatial Analysis'); return false;">
-Spatial Analysis
-</div>
-</div>
-<div class="card-text listing-description">
-Analyzing remotely sensed data to determine the number of residents affected by the power outages caused by storms in February 2021.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alex Reed
-</div>
-<div class="listing-date">
-Nov 14, 2022
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
+<section id="welcome-to-my-blog-you-will-find-a-collection-of-articles-on-a-wide-variety-of-topics-relating-to-my-journey-with-data-science.-i-hope-you-will-find-something-of-interest." class="level4">
+<h4 class="anchored" data-anchor-id="welcome-to-my-blog-you-will-find-a-collection-of-articles-on-a-wide-variety-of-topics-relating-to-my-journey-with-data-science.-i-hope-you-will-find-something-of-interest.">Welcome to my blog! You will find a collection of articles on a wide variety of topics relating to my journey with data science. I hope you will find something of interest.</h4>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">2023</h2>
+<div id="listing-posts_2023" class="quarto-listing quarto-listing-container-custom">
+<div class="list blog">
+    <div class="blog-entry" data-index="0" data-categories="R" data-listing-date-sort="1692342000000" data-listing-file-modified-sort="1700441002033" data-listing-reading-time-sort="3.43">
+        <div class="metadata">          
+            <p class="date listing-date">August 18, 2023</p>
+        </div>
+        <div class="body">
+            <p class="title listing-title"><a href="./posts/2023-08-18-hex/index.html">Elevating Your Project: Branding using R</a></p>
+            <div class="post-categories listing-categories">
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
+                    R
+                </div>
+            </div>
+            <p class="description listing-description">Learn how design a unique hex sticker logo, to craft a color palette, and generate a QR code for efficient GitHub access.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="./posts/2023-08-18-hex/pyforest_hex_sticker.png" alt="Elevating Your Project: Branding using R" title="Elevating Your Project: Branding using R">
+        </div>
+    </div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">2022</h2>
+<div id="listing-posts_2022" class="quarto-listing quarto-listing-container-custom">
+<div class="list blog">
+    <div class="blog-entry" data-index="0" data-categories="R" data-listing-date-sort="1672473600000" data-listing-file-modified-sort="1680154271215" data-listing-reading-time-sort="8.245">
+        <div class="metadata">          
+            <p class="date listing-date">December 31, 2022</p>
+        </div>
+        <div class="body">
+            <p class="title listing-title"><a href="./posts/2022-12-31-rwrapped/index.html">R Stats Wrapped</a></p>
+            <div class="post-categories listing-categories">
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
+                    R
+                </div>
+            </div>
+            <p class="description listing-description">After being inspired by the popular end-of-year tradition, Spotify Wrapped, I decided to create my own #RStatsWrapped using .Rmd files from 2022.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="./posts/2022-12-31-rwrapped/album_cover.png" alt="R Stats Wrapped" title="R Stats Wrapped">
+        </div>
+    </div>
+    <div class="blog-entry" data-index="1" data-categories="Environmental Justice" data-listing-date-sort="1670400000000" data-listing-file-modified-sort="1677342932911" data-listing-reading-time-sort="4.24">
+        <div class="metadata">          
+            <p class="date listing-date">December 7, 2022</p>
+        </div>
+        <div class="body">
+            <p class="title listing-title"><a href="./posts/2022-12-07-environmental-injustice-cafos/index.html">CAFOs and Environmental Justice</a></p>
+            <div class="post-categories listing-categories">
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('Environmental Justice'); return false;">
+                    Environmental Justice
+                </div>
+            </div>
+            <p class="description listing-description">Exploring the environmental impact, missing data implications, and injustices of CAFOs.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="./posts/2022-12-07-environmental-injustice-cafos/CAFOs.png" alt="CAFOs and Environmental Justice" title="CAFOs and Environmental Justice">
+        </div>
+    </div>
+    <div class="blog-entry" data-index="2" data-categories="R,Statistical Analysis,Binary Logistic Regression" data-listing-date-sort="1670054400000" data-listing-file-modified-sort="1691621317218" data-listing-reading-time-sort="11.005">
+        <div class="metadata">          
+            <p class="date listing-date">December 3, 2022</p>
+        </div>
+        <div class="body">
+            <p class="title listing-title"><a href="./posts/2022-12-03-cafo-presence/index.html">Predicting CAFO presence in California based on poverty rates</a></p>
+            <div class="post-categories listing-categories">
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
+                    R
+                </div>
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('Statistical Analysis'); return false;">
+                    Statistical Analysis
+                </div>
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('Binary Logistic Regression'); return false;">
+                    Binary Logistic Regression
+                </div>
+            </div>
+            <p class="description listing-description">Analyzing the relationship between poverty rates and CAFO presence.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="./posts/2022-12-03-cafo-presence/cows.png" alt="Predicting CAFO presence in California based on poverty rates" title="Predicting CAFO presence in California based on poverty rates">
+        </div>
+    </div>
+    <div class="blog-entry" data-index="3" data-categories="R,Remote Sensing,Spatial Analysis" data-listing-date-sort="1668412800000" data-listing-file-modified-sort="1700439118081" data-listing-reading-time-sort="6.11">
+        <div class="metadata">          
+            <p class="date listing-date">November 14, 2022</p>
+        </div>
+        <div class="body">
+            <p class="title listing-title"><a href="./posts/2022-11-14-houston/index.html">Houston Power Crisis Analysis</a></p>
+            <div class="post-categories listing-categories">
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
+                    R
+                </div>
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('Remote Sensing'); return false;">
+                    Remote Sensing
+                </div>
+                <div class="post-category listing-category" onclick="window.quartoListingCategory('Spatial Analysis'); return false;">
+                    Spatial Analysis
+                </div>
+            </div>
+            <p class="description listing-description">Analyzing remotely sensed data to determine the number of residents affected by the power outages caused by storms in February 2021.</p>
+        </div>
+        <div class="thumbnail">
+            <img src="./posts/2022-11-14-houston/census_income.png" alt="Houston Power Crisis Analysis" title="Houston Power Crisis Analysis">
+        </div>
+    </div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

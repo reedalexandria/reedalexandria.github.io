@@ -7,7 +7,7 @@ about:
   template: jolla
   #image-shape: rounded
   image-width: 18em
-  links: 
+  links:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/alexandria-reed-579132128/
@@ -54,9 +54,7 @@ I am an ***Environmental Data Scientist***, passionate about exploring the inter
 }
 
 </style>
-
 ```
-
 ::: blue-bg
 ::: lightgreen-bg
 ## [News and Updates]{.underline}
@@ -67,12 +65,10 @@ I am an ***Environmental Data Scientist***, passionate about exploring the inter
 
 -   June 2, 2023: Presented Capstone Project [Informing Forest Conservation Regulations in Paraguay](https://bren.ucsb.edu/projects/informing-forest-conservation-regulations-paraguay) to the public. Check it out (2:58): [YouTube Link](https://www.youtube.com/embed/3r3VleM6u3o)
 
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3r3VleM6u3o" frameborder="0" allowfullscreen>
 
 </iframe>
 :::
-
 
 <!-- :::  -->
 
